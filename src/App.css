@@ -31,3 +31,11 @@
     transform: rotate(360deg);
   }
 }
+
+
+.header-class {
+  background: '#f4f4f4';
+    color: 'white';
+    text-Align: 'center';
+    padding: '10px'
+}
