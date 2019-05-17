@@ -9,12 +9,10 @@ class Topics extends Component {
     }
 
     render() {
-        console.log(this.state.topics)
         return (
             <div>
                 <ul>
                     {this.state.topics.map(topic => {
-                        console.log(topic)
                         return <Link to={`/topics/${topic.slug}`} key={topic.slug}> <li>{topic.slug}</li></Link>
                     })}
 

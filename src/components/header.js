@@ -1,7 +1,7 @@
 import React from 'react'
 import '../index.css'
 
-function Header() {
+function Header(props) {
     return <header style={headerClass}>Welcome to NC news, by HB</header>
 }
 

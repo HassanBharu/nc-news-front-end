@@ -9,11 +9,12 @@ class TopicByArticle extends Component {
     }
 
     render() {
-        console.log(this.state.topicArticle)
+        //  console.log(this.props.login)
         return (
             <div>
+                {this.props.loggingIn && <button>add new article</button>}
                 {this.state.topicArticle.map(article => {
-                    return <Link to={`/articles/${article.article_id}`}><li>{article.title}</li></Link>
+                    return <Link key={article.article_id} to={`/articles/${article.article_id}`}><li>{article.title}</li></Link>
                 })}
             </div>
         )
@@ -22,7 +23,6 @@ class TopicByArticle extends Component {
     componentDidMount() {
         getTopicsbyQuery(this.props.topic)
             .then(topics => {
-                console.log(topics)
                 this.setState({ topicArticle: topics })
             })
     }
