@@ -3,6 +3,7 @@ import { getSingleArticle, patchVotes } from './api'
 import '../App.css'
 import { navigate } from "@reach/router";
 import Comments from './comments'
+import like from '../images/like.jpg'
 
 class SingleArticle extends Component {
 
@@ -18,14 +19,15 @@ class SingleArticle extends Component {
 
         return (
             < div >
-                <h4>Article: {title}</h4>
+                <h2 style={{ textAlign: 'center' }}>Article <p>{title}</p></h2>
+
                 {body}
                 <p></p>
-                <div style={articleInfo}>Votes: {votes + this.state.vote} | created_at: {created_at} | Author: {author}
+                <div className="ulArticles">Votes: {votes + this.state.vote} | created_at: {created_at} | Author: {author}
                     {this.props.loggingIn &&
                         <div>
                             {this.state.vote === 0 ?
-                                <button onClick={() => this.amendVote(1)}>vote +1 </button > :
+                                <button onClick={() => this.amendVote(1)} className="likeButton">vote +1 </button > :
                                 <button onClick={() => this.amendVote(-1)}>vote -1</button>}
                         </div>
                     }
@@ -77,7 +79,7 @@ const articleInfo = {
     borderWidth: '2px',
     borderStyle: 'solid',
     borderColor: 'grey',
-    alignSelf: 'auto'
+    textAlign: 'centre'
 }
 
 export default SingleArticle

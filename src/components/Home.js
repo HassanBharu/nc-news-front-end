@@ -13,8 +13,8 @@ class Home extends Component {
             <div>
 
                 <div> <SortBy order={this.articleOrder} /></div>
-                <h3>Top 10 trending articles by vote</h3>
-                <ul>{this.state.articles.map(article => { return <li key={article.article_id}><Link to={`/articles/${article.article_id}`}>{article.title}<p>written by:  {article.author}</p></Link></li> })}</ul>
+                <h2 style={{ textAlign: 'center' }}>Top 10 trending articles by vote</h2>
+                <ul>{this.state.articles.map(article => { return <li key={article.article_id}><Link to={`/articles/${article.article_id}`}>{article.title}<p>written by:  {article.author}</p><p>Articles Votes: {article.votes}</p></Link></li> })}</ul>
             </div>
         )
     }

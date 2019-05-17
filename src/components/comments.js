@@ -24,7 +24,7 @@ class Comments extends Component {
                     {this.state.comments.map(comment => {
                         return <div key={comment.comment_id}>
 
-                            <li style={border} >
+                            <li className="ulArticles" >
                                 <SingleComment comment={comment} loggedIn={this.props.loggedIn} />
 
                                 {this.props.loggedIn === comment.author
@@ -73,11 +73,5 @@ class Comments extends Component {
     }
 }
 
-const border = {
-    borderWidth: '2px',
-    borderStyle: 'inset',
-    borderColor: 'coral',
-    padding: '5px'
-}
 
 export default Comments

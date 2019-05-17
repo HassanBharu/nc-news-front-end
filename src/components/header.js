@@ -8,7 +8,7 @@ function Header(props) {
 const headerClass = {
     background: '#333',
     color: 'white',
-    fontSize: '30px',
+    fontSize: '40px',
     textAlign: 'center',
     padding: '30px'
 }

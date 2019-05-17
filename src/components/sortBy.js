@@ -6,12 +6,12 @@ class SortBy extends Component {
     state = {
         artilceOrder: []
     }
+
     render() {
-        console.log(this.props.order)
 
         return (<div>
             <h5>sort articles by:</h5>
-            <select >
+            <select onClick={this.handleClick} >
                 <option value="votes" > Votes </option>
                 <option value="comment_count"> Comment Count </option>
                 <option value="created_at"> Created At </option>
@@ -21,13 +21,9 @@ class SortBy extends Component {
     }
 
     handleClick = (e) => {
-
-        console.log('clickkk')
-        e.preventDefault()
-
         orderByComment(e.target.value)
-            .then(articleOrder => {
-                this.setState({ articleOrder })
+            .then(artilceOrder => {
+                this.setState({ artilceOrder: artilceOrder })
             })
     }
 

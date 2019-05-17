@@ -12,10 +12,10 @@ class AllArticles extends Component {
         return (<div>
             <SortBy />
 
-            <h4>All articles</h4>
-            <ul>
+            <h1 style={{ textAlign: 'center' }}>All Articles</h1>
+            <ul >
                 {this.state.articles.map(article => {
-                    return <Link to={`/articles/${article.article_id}`} key={article.article_id}><li>{article.title}</li></Link>
+                    return <Link to={`/articles/${article.article_id}`} key={article.article_id}><li className="ulArticles">{article.title}<p>Written By:{article.author} </p><p>Article Votes: {article.votes}</p></li></Link>
                 })}
             </ul>
         </div>

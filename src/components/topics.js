@@ -12,12 +12,12 @@ class Topics extends Component {
     render() {
         return (
             <div>
-                <ul>
-                    {this.state.topics.map(topic => {
-                        return <Link to={`/topics/${topic.slug}`} key={topic.slug}> <li>{topic.slug}</li></Link>
-                    })}
-
+                <ul>    {this.state.topics.map(topic => {
+                    return <Link to={`/topics/${topic.slug}`} key={topic.slug}> <li className="ulArticles">{topic.slug} <p>Description: {topic.description}</p></li></Link>
+                })}
                 </ul>
+
+
             </div>
         )
     }

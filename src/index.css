@@ -31,6 +31,35 @@ li a {
   color: #000;
   padding: 8px 16px;
   text-decoration: none;
+  border-width: 1px;
+  border-style: inset;
+  border: 2px solid rgb(99, 85, 85) ;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+
+}
+
+.likeButton {
+  background: url('../src/images/like.jpg')
+}
+
+.ulArticles{
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-width: 1px;
+  border-style: inset;
+  border: 2px solid rgb(99, 85, 85) ;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+
+}
+
+.liTopics {
+  float: left
 }
 
 .liHome {
@@ -40,6 +69,7 @@ li a {
   text-decoration: none;
   float:left;
   display: flex;
+  
 }
 
 /* Change the link color on hover */
@@ -47,3 +77,16 @@ li a:hover {
   background-color: #555;
   color: white;
 }
+
+/* .ulTopics {
+  border: #000;
+  border-width: 1px;
+  border-color: blue;
+  border-style: inset;
+  border: 2px solid red;
+  border-radius: 5px;
+  
+  /* border-Style: inset;
+  border-Color: coral;
+  padding: 5px; */
+

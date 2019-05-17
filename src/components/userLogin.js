@@ -13,7 +13,6 @@ class UserLoginForm extends Component {
 
             < form style={formClass} onSubmit={this.handleSubmit} >
                 <ul className="liHome">
-                    <li> </li>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/topics">Topics</Link></li>
                     <li><Link to="/articles">All articles</Link></li>

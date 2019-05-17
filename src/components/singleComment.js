@@ -14,7 +14,7 @@ class SingleComment extends Component {
             <div>
                 <p>{comment.body}</p>
 
-                <div>votes: {comment.votes + this.state.votes} | created_at: {comment.created_at} | Author: {comment.author}</div>
+                <div><p> created_at: {comment.created_at} </p> <p>Author: {comment.author}</p><p>votes: {comment.votes + this.state.votes} </p></div>
 
                 {this.props.loggedIn &&
                     <div>

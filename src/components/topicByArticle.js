@@ -13,9 +13,10 @@ class TopicByArticle extends Component {
         return (
             <div>
                 {this.props.loggingIn && <button>add new article</button>}
-                {this.state.topicArticle.map(article => {
-                    return <Link key={article.article_id} to={`/articles/${article.article_id}`}><li>{article.title}</li></Link>
-                })}
+                <ul>
+                    {this.state.topicArticle.map(article => {
+                        return <li key={article.article_id} ><Link to={`/articles/${article.article_id}`} className="ulArticles" >{article.title} <p>Written By: {article.author} | Article Votes: {article.votes} </p></Link></li>
+                    })}</ul>
             </div>
         )
     }
