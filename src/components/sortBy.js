@@ -21,13 +21,12 @@ class SortBy extends Component {
     }
 
     handleClick = (e) => {
-        console.log(e.target.value)
-        //  console.log('clickkk')
+
+        console.log('clickkk')
         e.preventDefault()
 
         orderByComment(e.target.value)
             .then(articleOrder => {
-                console.log(articleOrder)
                 this.setState({ articleOrder })
             })
     }

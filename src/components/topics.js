@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { getTopics } from './api'
 import { Link } from '@reach/router'
+import '../index.css'
 
 class Topics extends Component {
 

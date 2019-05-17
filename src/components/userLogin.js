@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { getUsers } from './api'
+import { Link } from '@reach/router'
 
 class UserLoginForm extends Component {
     state = {
@@ -8,12 +9,22 @@ class UserLoginForm extends Component {
     render() {
         const { usernameInput } = this.state
         return (
+
+
             < form style={formClass} onSubmit={this.handleSubmit} >
+                <ul className="liHome">
+                    <li> </li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/topics">Topics</Link></li>
+                    <li><Link to="/articles">All articles</Link></li>
+                </ul>
+
                 {this.props.login ? <button onClick={this.handleLogout}>logout</button> :
                     <div>
                         <label>username:</label>
                         <input onChange={this.usernameInput}></input>
                         <button onClick={() => this.props.userLoggedIn(usernameInput)}>click to log in</button>
+                        <p style={defaultUser}>default username: jessjelly(all lowercase)</p>
                     </div>}
             </form >
         )
@@ -40,6 +51,14 @@ const formClass = {
     background: 'grey',
     color: 'white',
     fontSize: '18px',
+    textAlign: 'right',
+    padding: '30px',
+    paddingTop: '5px'
+}
+const defaultUser = {
+    background: 'grey',
+    color: 'white',
+    fontSize: '10px',
     textAlign: 'right',
     padding: '5px',
     paddingTop: '5px'

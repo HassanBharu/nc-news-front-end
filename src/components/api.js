@@ -31,8 +31,6 @@ export const getSingleArticle = (article_id) => {
 }
 
 export const getComments = (article_id) => {
-    console.log(article_id)
-
     return Axios.get(`${URL}/articles/${article_id}/comments`)
         .then(({ data: { comments } }) => {
             return comments
@@ -97,6 +95,14 @@ export const patchVotesComments = (comment_id, number) => {
     return Axios.patch(`${URL}/comments/${comment_id}`, { inc_votes: number })
         .then(({ data: { comment } }) => {
             console.log(comment)
+            return comment
+        })
+}
+
+export const getSingleComment = (comment_id) => {
+    console.log(comment_id)
+    return Axios.get(`${URL}/comments/${comment_id}`)
+        .then(({ data: { comment } }) => {
             return comment
         })
 }

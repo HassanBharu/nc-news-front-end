@@ -21,7 +21,7 @@ class SingleArticle extends Component {
                 <h4>Article: {title}</h4>
                 {body}
                 <p></p>
-                <div style={articleInfo}>Votes: {votes} | created_at: {created_at} | Author: {author}
+                <div style={articleInfo}>Votes: {votes + this.state.vote} | created_at: {created_at} | Author: {author}
                     {this.props.loggingIn &&
                         <div>
                             {this.state.vote === 0 ?
@@ -59,13 +59,9 @@ class SingleArticle extends Component {
 
     }
 
-
-
-
     componentDidMount() {
         getSingleArticle(this.props.article_id)
             .then(article => {
-                console.log(article)
                 this.setState({ singleArticle: article })
             }).catch(({ response }) => {
                 navigate('/error', { replace: true, state: { From: 'articles', msg: response.data.msg, status: response.status } })
