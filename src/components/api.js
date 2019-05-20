@@ -62,7 +62,6 @@ export const orderByVotes = () => {
 export const orderByComment = (query) => {
     return Axios.get(`${URL}/articles?sort_by=${query}`)
         .then(({ data: { articles } }) => {
-            //   console.log(articles)
             return articles
         })
 }
@@ -86,7 +85,7 @@ export const deleteComment = (comment_id) => {
 export const patchVotes = (article_id, number) => {
     return Axios.patch(`${URL}/articles/${article_id}`, { inc_votes: number })
         .then(({ data: { article } }) => {
-            console.log(article)
+
             return article
         })
 }
@@ -94,13 +93,12 @@ export const patchVotes = (article_id, number) => {
 export const patchVotesComments = (comment_id, number) => {
     return Axios.patch(`${URL}/comments/${comment_id}`, { inc_votes: number })
         .then(({ data: { comment } }) => {
-            console.log(comment)
+
             return comment
         })
 }
 
 export const getSingleComment = (comment_id) => {
-    console.log(comment_id)
     return Axios.get(`${URL}/comments/${comment_id}`)
         .then(({ data: { comment } }) => {
             return comment

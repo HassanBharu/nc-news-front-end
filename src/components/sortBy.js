@@ -6,7 +6,6 @@ class SortBy extends Component {
     state = {
         artilceOrder: []
     }
-
     render() {
 
         return (<div>
@@ -20,14 +19,17 @@ class SortBy extends Component {
         )
     }
 
+
     handleClick = (e) => {
+
         orderByComment(e.target.value)
             .then(artilceOrder => {
-                this.setState({ artilceOrder: artilceOrder })
+                this.setState({ artilceOrder })
             })
+
     }
 
-    //   console.log(e.target)
+
 
 
 

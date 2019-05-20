@@ -3,7 +3,7 @@ import { getSingleArticle, patchVotes } from './api'
 import '../App.css'
 import { navigate } from "@reach/router";
 import Comments from './comments'
-import like from '../images/like.jpg'
+/* import like from '../images/like.jpg' */
 
 class SingleArticle extends Component {
 
@@ -75,11 +75,11 @@ class SingleArticle extends Component {
 
 
 
-const articleInfo = {
+/* const articleInfo = {
     borderWidth: '2px',
     borderStyle: 'solid',
     borderColor: 'grey',
     textAlign: 'centre'
-}
+} */
 
 export default SingleArticle

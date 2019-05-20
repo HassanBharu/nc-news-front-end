@@ -8,6 +8,7 @@ class UserLoginForm extends Component {
     }
     render() {
         const { usernameInput } = this.state
+
         return (
 
 
@@ -18,13 +19,15 @@ class UserLoginForm extends Component {
                     <li><Link to="/articles">All articles</Link></li>
                 </ul>
 
-                {this.props.login ? <button onClick={this.handleLogout}>logout</button> :
-                    <div>
-                        <label>username:</label>
-                        <input onChange={this.usernameInput}></input>
-                        <button onClick={() => this.props.userLoggedIn(usernameInput)}>click to log in</button>
-                        <p style={defaultUser}>default username: jessjelly(all lowercase)</p>
-                    </div>}
+                {
+                    this.props.login ? <button onClick={this.handleLogout}>logout</button> :
+                        <div>
+                            <label>username:</label>
+                            <input onChange={this.usernameInput}></input>
+                            <button onClick={() => this.props.userLoggedIn(usernameInput)}>click to log in</button>
+                            <p style={defaultUser}>default username: jessjelly(all lowercase)</p>
+                        </div>
+                }
             </form >
         )
     }

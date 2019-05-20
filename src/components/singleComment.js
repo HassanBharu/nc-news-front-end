@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getSingleComment, patchVotesComments } from './api'
+import { patchVotesComments } from './api'
 
 
 class SingleComment extends Component {

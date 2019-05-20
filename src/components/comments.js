@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { getComments, postComment, deleteComment, patchVotesComments } from './api'
+import { getComments, postComment, deleteComment } from './api'
 import '../index.css'
-import { navigate } from "@reach/router";
 import SingleComment from './singleComment'
 
 class Comments extends Component {
