@@ -8,8 +8,8 @@ const ShowErrors = (props) => {
 
     return (
         <div>
-            <p>Oops! Error: {status}</p>
-            <p>{From}: {msg} </p>
+            <h3>Oops! Error {status} {From}, {msg}</h3>
+            <h3> </h3>
         </div>
     )
 }

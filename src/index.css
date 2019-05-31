@@ -40,9 +40,6 @@ li a {
 
 }
 
-.likeButton {
-  background: url('../src/images/like.jpg')
-}
 
 .ulArticles{
   display: block;
@@ -54,6 +51,7 @@ li a {
   border: 2px solid rgb(99, 85, 85) ;
   border-radius: 5px;
   margin-bottom: 5px;
+  margin-top:10px;
   text-align: center;
 
 }

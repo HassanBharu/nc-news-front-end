@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { getTopicsbyQuery } from './api'
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
+import SortBy from './sortBy'
 
 class TopicByArticle extends Component {
 
@@ -12,19 +13,26 @@ class TopicByArticle extends Component {
         //  console.log(this.props.login)
         return (
             <div>
+                <SortBy o={this.order} />
                 {this.props.loggingIn && <button>add new article</button>}
+                <h2 style={{ textAlign: "center" }}>Articles Per Topic</h2>
                 <ul>
                     {this.state.topicArticle.map(article => {
-                        return <li key={article.article_id} ><Link to={`/articles/${article.article_id}`} className="ulArticles" >{article.title} <p>Written By: {article.author} | Article Votes: {article.votes} </p></Link></li>
+                        return <li key={article.article_id} ><Link to={`/articles/${article.article_id}`} className="ulArticles" ><b>{article.title}</b> <p>Written By: {article.author} |  Comment Count: {article.comment_count} | Created At: {article.created_at} </p><p>Article Votes: {article.votes}</p></Link></li>
                     })}</ul>
             </div>
         )
+    }
+    order = (order) => {
+        this.setState({ topicArticle: order })
     }
 
     componentDidMount() {
         getTopicsbyQuery(this.props.topic)
             .then(topics => {
                 this.setState({ topicArticle: topics })
+            }).catch(({ response }) => {
+                navigate('/error', { replace: true, state: { From: 'topics', msg: response.data.msg, status: response.status } })
             })
     }
 

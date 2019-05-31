@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { getUsers } from './api'
-import { Link } from '@reach/router'
+import { Link, navigate } from '@reach/router'
 
 class UserLoginForm extends Component {
     state = {
@@ -16,7 +16,7 @@ class UserLoginForm extends Component {
                 <ul className="liHome">
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/topics">Topics</Link></li>
-                    <li><Link to="/articles">All articles</Link></li>
+                    <li><Link to="/articles">All Articles</Link></li>
                 </ul>
 
                 {
@@ -24,7 +24,7 @@ class UserLoginForm extends Component {
                         <div>
                             <label>username:</label>
                             <input onChange={this.usernameInput}></input>
-                            <button onClick={() => this.props.userLoggedIn(usernameInput)}>click to log in</button>
+                            <button type='submit'>click to log in</button>
                             <p style={defaultUser}>default username: jessjelly(all lowercase)</p>
                         </div>
                 }
@@ -37,13 +37,21 @@ class UserLoginForm extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault()
-        getUsers(this.state.usernameInput).then(users => {
-            return this.props.userLoggedIn(users.username)
-        })
+        console.log('handleSubmit')
+        if (this.state.usernameInput) {
+            getUsers(this.state.usernameInput).then(users => {
+
+                return this.props.userLoggedIn(users.username)
+            }).catch(({ response }) => {
+                navigate('/error', { replace: true, state: { From: 'users', msg: response.data.msg, status: response.status } })
+            })
+        }
+
 
     }
     handleLogout = (event) => {
         event.preventDefault()
+        console.log('handleLogout')
         this.setState({ usernameInput: this.props.userLoggedIn('') })
     }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { getTopics } from './api'
-import { Link } from '@reach/router'
+import { Link, navigate } from '@reach/router'
 import '../index.css'
 
 class Topics extends Component {
@@ -13,7 +13,7 @@ class Topics extends Component {
         return (
             <div>
                 <ul>    {this.state.topics.map(topic => {
-                    return <Link to={`/topics/${topic.slug}`} key={topic.slug}> <li className="ulArticles">{topic.slug} <p>Description: {topic.description}</p></li></Link>
+                    return <li className="ulArticles" key={topic.slug}><Link to={`/topics/${topic.slug}`} > {topic.slug} <p>Description: {topic.description}</p></Link></li>
                 })}
                 </ul>
 
@@ -26,6 +26,8 @@ class Topics extends Component {
         getTopics()
             .then(topic => {
                 this.setState({ topics: topic })
+            }).catch(({ response }) => {
+                navigate('/error', { replace: true, state: { From: 'topics', msg: response.data.msg, status: response.status } })
             })
 
 

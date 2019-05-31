@@ -19,6 +19,7 @@ export const getAllArticles = () => {
 export const getUsers = (username) => {
     return Axios.get(`${URL}/users/${username}`)
         .then(({ data: { user } }) => {
+
             return user
         })
 }
@@ -54,20 +55,18 @@ export const getTopicsbyQuery = (query) => {
 export const orderByVotes = () => {
     return Axios.get(`${URL}/articles?sort_by=votes`)
         .then(({ data: { articles } }) => {
-            //  console.log(articles)
             return articles
         })
 }
 
 export const orderByComment = (query) => {
-    return Axios.get(`${URL}/articles?sort_by=${query}`)
+    return Axios.get(`${URL}/articles?sort_by=${query}&limit=100`)
         .then(({ data: { articles } }) => {
             return articles
         })
 }
 
 export const postComment = (article_id, username, body) => {
-    // console.log(article_id, username, body)
     return Axios.post(`${URL}/articles/${article_id}/comments`, { username, body })
         .then(({ data: { comment } }) => {
             return comment
@@ -75,8 +74,6 @@ export const postComment = (article_id, username, body) => {
 }
 
 export const deleteComment = (comment_id) => {
-    console.log(comment_id)
-    // console.log(article_id, username, body)
     return Axios.delete(`${URL}/comments/${comment_id}`)
 
 
@@ -105,5 +102,16 @@ export const getSingleComment = (comment_id) => {
         })
 }
 
+export const postArticle = (title, body, topic, author) => {
+    return Axios.post(`${URL}/articles`, { title, body, topic, author })
+        .then(({ data }) => {
+            return data
+        })
+}
 
+
+export const deleteArticle = (article_id) => {
+    return Axios.delete(`${URL}/articles/${article_id}`)
+
+}
 

@@ -7,10 +7,11 @@ class Comments extends Component {
 
     state = {
         comments: [],
-        vote: 0
+
     }
 
     render() {
+
         return (
             < div >
 
@@ -69,6 +70,7 @@ class Comments extends Component {
             .then(comments => {
                 this.setState({ comments })
             })
+
     }
 }
 

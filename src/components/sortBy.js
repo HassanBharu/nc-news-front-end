@@ -24,7 +24,7 @@ class SortBy extends Component {
 
         orderByComment(e.target.value)
             .then(artilceOrder => {
-                this.setState({ artilceOrder })
+                this.props.o(artilceOrder)
             })
 
     }

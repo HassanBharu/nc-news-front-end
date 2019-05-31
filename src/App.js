@@ -9,6 +9,7 @@ import Topics from './components/topics'
 import TopicByArticle from './components/topicByArticle'
 import AllArticles from './components/allArticles'
 import ShowErrors from './components/ShowErrors'
+import AddArticle from './components/addArticle'
 
 
 class App extends Component {
@@ -23,11 +24,13 @@ class App extends Component {
     return (
       <div>
         <Header />
+
         <UserLoginForm userLoggedIn={this.userLogin} login={userLoggedIn} />
 
         <Router>
           <Home path="/" />
-          <AllArticles path="/articles" />
+          <AllArticles path="/articles" loggingIn={this.state.userLoggedIn} />
+          <AddArticle path="/articles/newArticle" loggingIn={this.state.userLoggedIn} />
           <SingleArticle path="/articles/:article_id" loggingIn={this.state.userLoggedIn} />
           <Topics path="/topics/" loggingIn={this.state.userLoggedIn} />
           <TopicByArticle path="/topics/:topic" />
