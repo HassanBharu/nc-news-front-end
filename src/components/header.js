@@ -2,11 +2,12 @@ import React from 'react'
 import '../index.css'
 
 function Header(props) {
-    return <header style={headerClass}>Welcome to NC news, by HB</header>
+    return <header className="header" >Welcome to NC news, by HB</header>
 }
 
 const headerClass = {
-    background: '#333',
+    fontfamily: "Times,serif",
+    background: 'orange',
     color: 'white',
     fontSize: '40px',
     textAlign: 'center',

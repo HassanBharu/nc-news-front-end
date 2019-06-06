@@ -15,7 +15,8 @@ import AddArticle from './components/addArticle'
 class App extends Component {
   state = {
     userLoggedIn: 'jessjelly',
-    sortBy: []
+    sortBy: [],
+    p: 1
 
   }
 
@@ -36,6 +37,7 @@ class App extends Component {
           <TopicByArticle path="/topics/:topic" />
           <ShowErrors default path="/error" />
         </Router>
+
       </div>
     );
   }

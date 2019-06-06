@@ -12,20 +12,20 @@ class UserLoginForm extends Component {
         return (
 
 
-            < form style={formClass} onSubmit={this.handleSubmit} >
-                <ul className="liHome">
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/topics">Topics</Link></li>
-                    <li><Link to="/articles">All Articles</Link></li>
+            < form className="form" onSubmit={this.handleSubmit} >
+                <ul>
+                    <li className="liHome"><Link to="/">Home</Link></li>
+                    <li className="liHome"><Link to="/topics">Topics</Link></li>
+                    <li className="liHome"><Link to="/articles">All Articles</Link></li>
                 </ul>
 
                 {
-                    this.props.login ? <button onClick={this.handleLogout}>logout</button> :
+                    this.props.login ? <button className="button2" onClick={this.handleLogout}>logout</button> :
                         <div>
                             <label>username:</label>
                             <input onChange={this.usernameInput}></input>
-                            <button type='submit'>click to log in</button>
-                            <p style={defaultUser}>default username: jessjelly(all lowercase)</p>
+                            <button className="button2" type='submit'>click to log in</button>
+                            <p className="user">default username: jessjelly(all lowercase)</p>
                         </div>
                 }
             </form >
@@ -37,7 +37,6 @@ class UserLoginForm extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault()
-        console.log('handleSubmit')
         if (this.state.usernameInput) {
             getUsers(this.state.usernameInput).then(users => {
 
@@ -51,27 +50,10 @@ class UserLoginForm extends Component {
     }
     handleLogout = (event) => {
         event.preventDefault()
-        console.log('handleLogout')
         this.setState({ usernameInput: this.props.userLoggedIn('') })
     }
 
 }
 
-const formClass = {
-    background: 'grey',
-    color: 'white',
-    fontSize: '18px',
-    textAlign: 'right',
-    padding: '30px',
-    paddingTop: '5px'
-}
-const defaultUser = {
-    background: 'grey',
-    color: 'white',
-    fontSize: '10px',
-    textAlign: 'right',
-    padding: '5px',
-    paddingTop: '5px'
-}
 
 export default UserLoginForm

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getSingleArticle, patchVotes, deleteArticle } from './api'
 import '../App.css'
+import '../index.css'
 import { navigate } from "@reach/router";
 import Comments from './comments'
 /* import like from '../images/like.jpg' */
@@ -16,19 +17,19 @@ class SingleArticle extends Component {
 
     render() {
         const { title, body, votes, created_at, author, article_id } = this.state.singleArticle
-        console.log(this.state)
         return (
             < div >
                 <h2 style={{ textAlign: 'center' }}>Article <p>{title}</p></h2>
 
                 {body}
                 <p></p>
-                <div className="ulArticles">Votes: {votes + this.state.vote} | created_at: {created_at} | Author: {author}
+                <div className="ulArticles"> Written By: {author}  <span></span> <span></span> {created_at}<p></p>Votes: {votes + this.state.vote}
                     {this.props.loggingIn &&
                         <div>
-                            {this.state.vote === 0 ?
-                                <button onClick={() => this.amendVote(1)} className="likeButton">vote +1 </button > :
-                                <button onClick={() => this.amendVote(-1)}>vote -1</button>}
+
+                            <button className="button1" disabled={this.state.vote === 1} onClick={() => this.amendVote(1)}>Like</button >
+                            <span></span><span></span>
+                            <button className="button1" disabled={this.state.vote === -1} onClick={() => this.amendVote(-1)}>Dislike</button>
                         </div>
                     }
                 </div>

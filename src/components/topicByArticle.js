@@ -19,7 +19,7 @@ class TopicByArticle extends Component {
                 <h2 style={{ textAlign: "center" }}>Articles Per Topic</h2>
                 <ul>
                     {this.state.topicArticle.map(article => {
-                        return <li key={article.article_id} ><Link to={`/articles/${article.article_id}`} className="ulArticles" ><b>{article.title}</b> <p>Written By: {article.author} |  Comment Count: {article.comment_count} | Created At: {article.created_at} </p><p>Article Votes: {article.votes}</p></Link></li>
+                        return <li key={article.article_id} ><Link to={`/articles/${article.article_id}`} className="ulArticles" ><b>{article.title}</b> <p>Written By: {article.author} <span></span><span></span>  Comment Count: {article.comment_count} <span></span><span></span> Created At: {article.created_at} </p><p>Article Votes: {article.votes}</p></Link></li>
                     })}</ul>
             </div>
         )

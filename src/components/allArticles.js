@@ -10,33 +10,29 @@ class AllArticles extends Component {
         articles: []
     }
     render() {
-        console.log(this.state.articles)
+        console.log(this.state.a)
         return (<div>
-            <SortBy o={this.order} />
+            <div>
+                <SortBy o={this.order} />
 
-            {this.props.loggingIn &&
-                <Link to="/articles/newArticle">Add new Article</Link>}
 
+                {this.props.loggingIn &&
+                    <Link className="link" to="/articles/newArticle">Add new Article</Link>}
+            </div>
 
 
             <h1 style={{ textAlign: 'center' }}>All Articles</h1>
             <ul >
                 {/* listing all the articles in a list */}
                 {this.state.articles.map(article => {
-                    return <li key={article.article_id} ><Link to={`/articles/${article.article_id}`} ><b>{article.title}</b><p>Written By:{article.author} | comment_count: {article.comment_count} | Created_At: {article.created_at} </p><p>Article Votes: {article.votes}</p></Link>
+                    return <li key={article.article_id} ><Link to={`/articles/${article.article_id}`} ><b>{article.title}</b><p>Written By: {article.author} <span></span><span></span> comment_count: {article.comment_count} <span></span><span></span> Created_At: {article.created_at} </p><p>Article Votes: {article.votes}</p></Link>
 
-                        {this.props.loggingIn === article.author && <button onClick={() => this.handleDeleteArticle(article.article_id)} style={{ float: 'inherit' }}>Delete article</button>}
+                        {this.props.loggingIn === article.author && <button className="deleteCommentButton" onClick={() => this.handleDeleteArticle(article.article_id)} >Delete Article: {article.title}</button>
+                        }
                         <p></p>
-
-
-
-                        {/* delete article button */}
-
-
                     </li>
                 })}
             </ul>
-            {/* end */}
         </div>
         )
     }
@@ -46,6 +42,7 @@ class AllArticles extends Component {
     }
 
     handleDeleteArticle = (id) => {
+        console.log(id)
         deleteArticle(id).then(() => {
             this.setState(prevState => {
                 return {
@@ -54,7 +51,7 @@ class AllArticles extends Component {
                     ))
                 }
             })
-        })
+        }).catch(err => console.error(err))
 
 
     }

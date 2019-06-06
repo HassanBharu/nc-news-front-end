@@ -16,7 +16,7 @@ class Home extends Component {
                 <h2 style={{ textAlign: 'center' }}>Top 10 Trending Articles</h2>
                 <ul>
                     {this.state.articles.map(article => {
-                        return <li key={article.article_id}><Link to={`/articles/${article.article_id}`}><b>{article.title}</b><p>written by:  {article.author} | Comment Count: {article.comment_count} | Created At: {article.created_at}</p><p>Articles Votes: {article.votes}</p></Link></li>
+                        return <li key={article.article_id}><Link to={`/articles/${article.article_id}`}><b>{article.title}</b><p>written by:  {article.author} <span></span><span></span> Comment Count: {article.comment_count} <span></span><span></span> Created At: {article.created_at}</p><p>Articles Votes: {article.votes}</p></Link></li>
                     })}
                 </ul>
             </div>

@@ -12,17 +12,29 @@ class SingleComment extends Component {
         const { comment } = this.props
         return (
             <div>
-                <p>{comment.body}</p>
+                <p className="eachComment" >
 
-                <div><p> created_at: {comment.created_at} </p> <p>Author: {comment.author}</p><p>votes: {comment.votes + this.state.votes} </p></div>
 
-                {this.props.loggedIn &&
-                    <div>
-                        {this.state.votes === 0 ?
-                            <button onClick={() => this.amendVote(comment.comment_id, 1)}>vote +1 </button > :
-                            <button onClick={() => this.amendVote(comment.comment_id, -1)}>vote -1</button>}</div>}
 
-            </div>
+                    <div >{comment.author} says: <p></p> {comment.created_at}
+
+
+
+                        {this.props.loggedIn &&
+                            <div>
+
+                                votes: {comment.votes + this.state.votes}<span></span> <span></span>
+                                <button disabled={this.state.votes === 1} onClick={() => this.amendVote(comment.comment_id, 1)}>Like </button >
+                                <span></span> <span></span>
+                                <button disabled={this.state.votes === -1} onClick={() => this.amendVote(comment.comment_id, -1)}>Dislike</button></div>}
+
+
+                    </div></p>
+                {<span className="commentBody">
+                    {comment.body}
+                </span>}
+
+            </div >
         )
     }
 
