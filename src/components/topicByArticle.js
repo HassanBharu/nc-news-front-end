@@ -14,7 +14,8 @@ class TopicByArticle extends Component {
         return (
             <div>
                 <SortBy o={this.order} />
-                {this.props.loggingIn && <button>add new article</button>}
+                <Link to="articles/newArticle"> Add New Article</Link>
+                {this.props.loggingIn && <Link to="articles/newArticle"> Add New Article</Link>}
                 <h2 style={{ textAlign: "center" }}>Articles Per Topic</h2>
                 <ul>
                     {this.state.topicArticle.map(article => {
