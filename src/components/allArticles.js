@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { getAllArticles, deleteArticle } from './api'
 import AddArticle from './addArticle'
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 import SortBy from './sortBy'
 import '../index.css'
 
@@ -13,13 +13,13 @@ class AllArticles extends Component {
         console.log(this.state.a)
         return (<div>
             <div>
-                <SortBy o={this.order} />
+
 
 
                 {this.props.loggingIn &&
-                    <Link className="link" to="/articles/newArticle">Add new Article</Link>}
+                    <button onClick={() => this.newArticle('/articles/newArticle')}>Add new Article</button>}
             </div>
-
+            <SortBy o={this.order} />
 
             <h1 style={{ textAlign: 'center' }}>All Articles</h1>
             <ul >
@@ -54,6 +54,10 @@ class AllArticles extends Component {
         }).catch(err => console.error(err))
 
 
+    }
+
+    newArticle = (goTo) => {
+        navigate(`${goTo}`)
     }
 
 

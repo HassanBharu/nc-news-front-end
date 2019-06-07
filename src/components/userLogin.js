@@ -8,19 +8,20 @@ class UserLoginForm extends Component {
     }
     render() {
         const { usernameInput } = this.state
+        console.log(usernameInput)
 
         return (
 
 
             < form className="form" onSubmit={this.handleSubmit} >
-                <ul>
-                    <li className="liHome"><Link to="/">Home</Link></li>
-                    <li className="liHome"><Link to="/topics">Topics</Link></li>
-                    <li className="liHome"><Link to="/articles">All Articles</Link></li>
+                <ul className="liHome">
+                    <li className="navLi"><button onClick={() => this.goTo('/')} className="navButton">Home</button></li>
+                    <li className="navLi"><button onClick={() => this.goTo('/topics')} className="navButton">Topics</button></li>
+                    <li className="navLi"><button onClick={() => this.goTo('/articles')} className="navButton">All Articles</button></li>
                 </ul>
 
                 {
-                    this.props.login ? <button className="button2" onClick={this.handleLogout}>logout</button> :
+                    this.props.login ? <div> <button className="button2" onClick={this.handleLogout}>Click to logout:{usernameInput}</button> </div> :
                         <div>
                             <label>username:</label>
                             <input onChange={this.usernameInput}></input>
@@ -45,9 +46,12 @@ class UserLoginForm extends Component {
                 navigate('/error', { replace: true, state: { From: 'users', msg: response.data.msg, status: response.status } })
             })
         }
-
-
     }
+
+    goTo = (destination) => {
+        navigate(`${destination}`)
+    }
+
     handleLogout = (event) => {
         event.preventDefault()
         this.setState({ usernameInput: this.props.userLoggedIn('') })

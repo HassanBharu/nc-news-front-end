@@ -9,7 +9,7 @@ class SortBy extends Component {
     render() {
 
         return (<div>
-            <p>sort articles by:</p>
+            <h5>sort articles by:</h5>
             <select onClick={this.handleClick} >
                 <option value="votes" > Votes </option>
                 <option value="comment_count"> Comment Count </option>
