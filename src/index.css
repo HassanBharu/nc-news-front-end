@@ -36,6 +36,7 @@ ul {
   border-radius: 5px;
   font-size: 20px;
   text-align: center;
+  min-width: 100px;
   border: 2px inset #1C6EA4;
 }
 .navButton:hover {background-color: #1C6EA4}
@@ -53,8 +54,8 @@ li {
   border-width: 1px;
   border-radius: 5px;
   text-align: left;
-  max-width: 630px;
-  /* min-width: 630px; */
+  max-width: 70%;
+   min-width: 70%;
   position: relative;
 }
 

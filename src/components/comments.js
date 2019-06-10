@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { getComments, postComment, deleteComment } from './api'
 import '../index.css'
 import SingleComment from './singleComment'
+import AddComment from './addComment'
 
 class Comments extends Component {
 
@@ -11,7 +12,7 @@ class Comments extends Component {
     }
 
     render() {
-
+        console.log(this.state.comments)
         return (
             < div >
 
@@ -19,7 +20,7 @@ class Comments extends Component {
 
                 <h4>Comments</h4>
 
-                {this.props.loggedIn && <div> <textarea onChange={this.bodyOfPost}></textarea>  <button onClick={this.handleClick}>Add Comment!</button> </div>}
+                {this.props.loggedIn && <AddComment loggedState={this.props.loggedIn} articleId={this.props.articleId} addComment={this.addToCommentsArray} />}
                 <ul>
                     {this.state.comments.map(comment => {
                         return <div key={comment.comment_id}>
@@ -40,17 +41,7 @@ class Comments extends Component {
     }
 
 
-    bodyOfPost = (inputText) => {
-        this.setState({ body: inputText.target.value })
-    }
 
-    handleClick = (e) => {
-        e.preventDefault()
-        postComment(this.props.articleId, this.props.loggedIn, this.state.body)
-            .then(comment => {
-                this.setState({ comments: [comment, ...this.state.comments] })
-            })
-    }
 
     handleDeleteComment = (id) => {
         deleteComment(id).then(() => {
@@ -61,9 +52,15 @@ class Comments extends Component {
         })
     }
 
-    bodyOfPost = (inputText) => {
-        this.setState({ body: inputText.target.value })
+
+
+    addToCommentsArray = (newComment) => {
+        this.setState({ comments: [newComment, ...this.state.comments] })
+
     }
+
+
+
 
     componentDidMount() {
         getComments(this.props.articleId)

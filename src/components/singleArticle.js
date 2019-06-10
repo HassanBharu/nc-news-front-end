@@ -10,7 +10,6 @@ class SingleArticle extends Component {
 
     state = {
         singleArticle: {},
-        body: '',
         vote: 0
 
     }

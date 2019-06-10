@@ -6,10 +6,11 @@ import '../index.css'
 
 class AllArticles extends Component {
     state = {
-        articles: []
+        articles: [],
+        order: null
     }
     render() {
-        console.log(this.state.articles)
+        console.log(this.state.order)
         return (<div>
 
 
@@ -18,7 +19,7 @@ class AllArticles extends Component {
                 {this.props.loggingIn &&
                     <button className="button3" onClick={() => navigate('/articles/newArticle')}>Add new Article</button>}
             </p>
-            <SortBy o={this.order} />
+            <SortBy o={this.order} oder={this.state.articles} />
 
             <h1 style={{ textAlign: 'center' }}>All Articles</h1>
             <ul >
@@ -37,6 +38,7 @@ class AllArticles extends Component {
     }
 
     order = (order) => {
+
         this.setState({ articles: order })
     }
 

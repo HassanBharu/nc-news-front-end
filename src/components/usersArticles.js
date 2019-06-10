@@ -12,11 +12,14 @@ class UsersArticles extends Component {
         const { articles } = this.state
         console.log(articles)
         return (
-            <ul>
-                {articles.map(article => {
-                    return <li key={article.article_id}><Link to={`/articles/${article.article_id}`}>{article.title}</Link></li>
-                })}
-            </ul>
+            <div>
+                <h1 style={{ textAlign: 'center' }}>Users Articles</h1>
+                <ul>
+                    {articles.map(article => {
+                        return <li key={article.article_id}><Link to={`/articles/${article.article_id}`}>{article.title}</Link></li>
+                    })}
+                </ul>
+            </div>
         )
     }
 

@@ -7,7 +7,6 @@ class AddArticle extends Component {
         title: '',
         body: '',
         topic: '',
-        article: []
 
     }
     render() {
@@ -16,17 +15,17 @@ class AddArticle extends Component {
                 <h3 style={{ textAlign: 'center' }}>Add a new article</h3>
 
                 <form >
-                    Title: <input onChange={this.title} className="input"></input>
+                    Title: <input onChange={this.handleTitle} className="input"></input>
                     <p></p>
 
-                    topic: <select onChange={this.topic} className="button1">
+                    topic: <select onChange={this.handleTopic} className="button1">
                         <option>cooking</option>
                         <option>football</option>
                         <option>coding</option>
                     </select>
 
                     <p></p>
-                    body:<textarea onChange={this.body} className="input"></textarea>
+                    body:<textarea onChange={this.handleBody} className="input"></textarea>
 
                     <button onClick={this.submitArticle} className="button1">submit</button>
                 </form>
@@ -35,16 +34,16 @@ class AddArticle extends Component {
         )
     }
 
-    title = (titleInfo) => {
+    handleTitle = (titleInfo) => {
         this.setState({ title: titleInfo.target.value })
     }
 
-    topic = (topicInfo) => {
+    handleTopic = (topicInfo) => {
 
         this.setState({ topic: topicInfo.target.value })
     }
 
-    body = (bodyInfo) => {
+    handleBody = (bodyInfo) => {
         this.setState({ body: bodyInfo.target.value })
     }
 

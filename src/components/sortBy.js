@@ -1,16 +1,21 @@
 import React, { Component } from 'react'
-import { orderByComment } from './api'
+import { orderByQuery } from './api'
 
 
 class SortBy extends Component {
-    state = {
-        artilceOrder: []
-    }
-    render() {
 
+    state = {
+        artilceOrder: [],
+        sortBy: ''
+    }
+
+    render() {
+        /*  console.log(this.state.artilceOrder)
+         console.log(this.props) */
         return (<div>
             <h5>sort articles by:</h5>
-            <select onClick={this.handleClick} >
+            <select onChange={this.handleChange} value={this.state.sortBy} >
+                <option>select order</option>
                 <option value="votes" > Votes </option>
                 <option value="comment_count"> Comment Count </option>
                 <option value="created_at"> Created At </option>
@@ -20,9 +25,12 @@ class SortBy extends Component {
     }
 
 
-    handleClick = (e) => {
-        orderByComment(e.target.value)
+    handleChange = (e) => {
+        this.setState({ sortBy: e.target.value })
+        orderByQuery(e.target.value)
+
             .then(artilceOrder => {
+
                 this.props.o(artilceOrder)
             })
 

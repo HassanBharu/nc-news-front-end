@@ -8,17 +8,17 @@ class UserLoginForm extends Component {
     }
     render() {
         const { usernameInput } = this.state
-        console.log(usernameInput)
+
 
         return (
 
 
             < form className="form" onSubmit={this.handleSubmit} >
                 <ul className="liHome">
-                    <li className="navLi"><button onClick={() => this.goTo('/')} className="navButton">Home</button></li>
-                    <li className="navLi"><button onClick={() => this.goTo('/topics')} className="navButton">Topics</button></li>
-                    <li className="navLi"><button onClick={() => this.goTo('/articles')} className="navButton">All Articles</button></li>
-                    <li className="navLi"><button onClick={() => this.goTo('/users')} className="navButton">Users</button></li>
+                    <button onClick={() => this.goTo('/')} className="navButton">Home</button>
+                    <button onClick={() => this.goTo('/topics')} className="navButton">Topics</button>
+                    <button onClick={() => this.goTo('/articles')} className="navButton">All Articles</button>
+                    <button onClick={() => this.goTo('/users')} className="navButton">Users</button>
                 </ul>
 
                 {

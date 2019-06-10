@@ -59,7 +59,7 @@ export const orderByVotes = () => {
         })
 }
 
-export const orderByComment = (query) => {
+export const orderByQuery = (query) => {
     return Axios.get(`${URL}/articles?sort_by=${query}&limit=100`)
         .then(({ data: { articles } }) => {
             return articles

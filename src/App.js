@@ -17,7 +17,6 @@ import UsersArticles from './components/usersArticles'
 class App extends Component {
   state = {
     userLoggedIn: 'jessjelly',
-    sortBy: [],
     p: 1
 
   }
@@ -46,13 +45,20 @@ class App extends Component {
     );
   }
 
-  userLogin = (user) => {
-    this.setState({ userLoggedIn: user })
+  componentDidMount() {
+    this.saveToStorage()
 
   }
 
-  sortArticlesBy = (array) => {
-    this.setState({ sortBy: array })
+  saveToStorage = () => {
+    for (let userLoggedIn in this.state) {
+      localStorage.setItem(userLoggedIn, JSON.stringify(this.state[userLoggedIn]))
+    }
+  }
+
+  userLogin = (user) => {
+    this.setState({ userLoggedIn: user })
+
   }
 
 
