@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { getUsers } from './api'
-import { Link, navigate } from '@reach/router'
+import { navigate } from '@reach/router'
 
 class UserLoginForm extends Component {
     state = {
@@ -18,13 +18,14 @@ class UserLoginForm extends Component {
                     <li className="navLi"><button onClick={() => this.goTo('/')} className="navButton">Home</button></li>
                     <li className="navLi"><button onClick={() => this.goTo('/topics')} className="navButton">Topics</button></li>
                     <li className="navLi"><button onClick={() => this.goTo('/articles')} className="navButton">All Articles</button></li>
+                    <li className="navLi"><button onClick={() => this.goTo('/users')} className="navButton">Users</button></li>
                 </ul>
 
                 {
-                    this.props.login ? <div> <button className="button2" onClick={this.handleLogout}>Click to logout:{usernameInput}</button> </div> :
+                    this.props.login ? <div> <button className="button1" onClick={this.handleLogout}>Click to logout:{usernameInput}</button> </div> :
                         <div>
                             <label>username:</label>
-                            <input onChange={this.usernameInput}></input>
+                            <input onChange={this.usernameInput} className="input"></input>
                             <button className="button2" type='submit'>click to log in</button>
                             <p className="user">default username: jessjelly(all lowercase)</p>
                         </div>

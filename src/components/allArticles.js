@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { getAllArticles, deleteArticle } from './api'
-import AddArticle from './addArticle'
 import { Link, navigate } from "@reach/router";
 import SortBy from './sortBy'
 import '../index.css'
@@ -10,15 +9,15 @@ class AllArticles extends Component {
         articles: []
     }
     render() {
-        console.log(this.state.a)
+        console.log(this.state.articles)
         return (<div>
-            <div>
 
 
 
+            <p>
                 {this.props.loggingIn &&
-                    <button onClick={() => this.newArticle('/articles/newArticle')}>Add new Article</button>}
-            </div>
+                    <button className="button3" onClick={() => navigate('/articles/newArticle')}>Add new Article</button>}
+            </p>
             <SortBy o={this.order} />
 
             <h1 style={{ textAlign: 'center' }}>All Articles</h1>
@@ -56,9 +55,6 @@ class AllArticles extends Component {
 
     }
 
-    newArticle = (goTo) => {
-        navigate(`${goTo}`)
-    }
 
 
     componentDidMount() {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getSingleArticle, patchVotes, deleteArticle } from './api'
+import { getSingleArticle, patchVotes } from './api'
 import '../App.css'
 import '../index.css'
 import { navigate } from "@reach/router";
@@ -16,7 +16,7 @@ class SingleArticle extends Component {
     }
 
     render() {
-        const { title, body, votes, created_at, author, article_id } = this.state.singleArticle
+        const { title, body, votes, created_at, author } = this.state.singleArticle
         return (
             < div >
                 <h2 style={{ textAlign: 'center' }}>Article <p>{title}</p></h2>

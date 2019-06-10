@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, navigate } from '@reach/router'
+import { navigate } from '@reach/router'
 import { postArticle } from './api'
 
 class AddArticle extends Component {
@@ -16,19 +16,19 @@ class AddArticle extends Component {
                 <h3 style={{ textAlign: 'center' }}>Add a new article</h3>
 
                 <form >
-                    Title: <input onChange={this.title}></input>
+                    Title: <input onChange={this.title} className="input"></input>
                     <p></p>
 
-                    topic: <select onChange={this.topic}>
+                    topic: <select onChange={this.topic} className="button1">
                         <option>cooking</option>
                         <option>football</option>
                         <option>coding</option>
                     </select>
 
                     <p></p>
-                    body:<textarea onChange={this.body}></textarea>
+                    body:<textarea onChange={this.body} className="input"></textarea>
 
-                    <button onClick={this.submitArticle}>submit</button>
+                    <button onClick={this.submitArticle} className="button1">submit</button>
                 </form>
 
             </div>

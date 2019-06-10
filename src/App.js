@@ -10,6 +10,8 @@ import TopicByArticle from './components/topicByArticle'
 import AllArticles from './components/allArticles'
 import ShowErrors from './components/ShowErrors'
 import AddArticle from './components/addArticle'
+import Users from './components/users'
+import UsersArticles from './components/usersArticles'
 
 
 class App extends Component {
@@ -34,7 +36,9 @@ class App extends Component {
           <AddArticle path="/articles/newArticle" loggingIn={this.state.userLoggedIn} />
           <SingleArticle path="/articles/:article_id" loggingIn={this.state.userLoggedIn} />
           <Topics path="/topics/" loggingIn={this.state.userLoggedIn} />
-          <TopicByArticle path="/topics/:topic" />
+          <TopicByArticle path="/topics/:topic" loggingIn={this.state.userLoggedIn} />
+          <Users path="/users" />
+          <UsersArticles path="/users/:username/articles" />
           <ShowErrors default path="/error" />
         </Router>
 

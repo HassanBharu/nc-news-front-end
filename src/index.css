@@ -54,8 +54,8 @@ li {
   border-radius: 5px;
   text-align: left;
   max-width: 630px;
+  /* min-width: 630px; */
   position: relative;
-  left: 20%;
 }
 
 a {
@@ -69,7 +69,8 @@ a {
   border: 2px inset #1C6EA4;
   border-radius: 5px;
   text-align: center;
-  vertical-align: middle;
+  height: 160px;
+  width:70%;
 }
 
 
@@ -118,8 +119,7 @@ span + span {
   margin-top:10px;
   text-align: center;
   margin: auto;
-  max-width: 630px;
- 
+  max-width: 630px; 
 }
 
 .border  {
@@ -167,6 +167,11 @@ span + span {
   background-color: red;
 }
 
+.input {
+  border-radius: 5px;
+  border:1px solid black;
+}
+
 .user {
   background: rgb(28, 151, 192);
   border-radius: 5px;
@@ -189,25 +194,23 @@ span + span {
   background-color: #008CBA;
   border-radius: 5px
 }
+.button2:hover {background-color: red}
 
-.dropdown {
-  position: relative;
-  display: inline-block;
+.button2:active {
+  background-color: red;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
+
+.button3 {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  border: 2px solid rgb(216, 164, 109);
+  float:right;
+  right:5%;
+  font-size: 20px;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
 
   .form  {
     background-color: white;

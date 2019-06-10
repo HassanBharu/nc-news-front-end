@@ -12,7 +12,7 @@ class SingleComment extends Component {
         const { comment } = this.props
         return (
             <div>
-                <p className="eachComment" >
+                <div className="eachComment" >
 
 
 
@@ -29,7 +29,7 @@ class SingleComment extends Component {
                                 <button disabled={this.state.votes === -1} onClick={() => this.amendVote(comment.comment_id, -1)}>Dislike</button></div>}
 
 
-                    </div></p>
+                    </div></div>
                 {<span className="commentBody">
                     {comment.body}
                 </span>}

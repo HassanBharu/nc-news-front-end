@@ -116,3 +116,21 @@ export const deleteArticle = (article_id) => {
 
 }
 
+export const getAllUsers = () => {
+    return Axios.get(`${URL}/users`)
+        .then(({ data: { users } }) => {
+            return users
+        })
+}
+
+export const getUserArticles = (username) => {
+    return Axios.get(`${URL}/users/${username}/articles`)
+        .then(({ data: { articles } }) => {
+            return articles
+        })
+}
+
+
+
+
+
