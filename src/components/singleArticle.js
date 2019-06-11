@@ -46,12 +46,12 @@ class SingleArticle extends Component {
 
     amendVote = (number) => {
 
-        patchVotes(this.props.article_id, number).then(article => {
+        patchVotes(this.props.article_id, number)
 
-            this.setState(prevState => {
-                return { vote: prevState.vote + number }
-            })
+        this.setState(prevState => {
+            return { vote: prevState.vote + number }
         })
+
     }
 
 

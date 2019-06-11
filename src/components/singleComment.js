@@ -10,6 +10,7 @@ class SingleComment extends Component {
 
     render() {
         const { comment } = this.props
+
         return (
             <div>
                 <div className="eachComment" >
@@ -26,6 +27,7 @@ class SingleComment extends Component {
                                 votes: {comment.votes + this.state.votes}<span></span> <span></span>
                                 <button disabled={this.state.votes > 0} onClick={() => this.amendVote(comment.comment_id, 1)}>Like </button >
                                 <span></span> <span></span>
+
                                 <button disabled={this.state.votes < 0} onClick={() => this.amendVote(comment.comment_id, -1)}>Dislike</button></div>}
 
 
@@ -39,11 +41,11 @@ class SingleComment extends Component {
     }
 
     amendVote = (id, number) => {
-        patchVotesComments(id, number).then(article => {
-            this.setState(prevState => {
-                return { votes: prevState.votes + number }
-            })
+        patchVotesComments(id, number)
+        this.setState(prevState => {
+            return { votes: prevState.votes + number }
         })
+
     }
 }
 
