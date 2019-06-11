@@ -24,9 +24,9 @@ class SingleComment extends Component {
                             <div>
 
                                 votes: {comment.votes + this.state.votes}<span></span> <span></span>
-                                <button disabled={this.state.votes === 1} onClick={() => this.amendVote(comment.comment_id, 1)}>Like </button >
+                                <button disabled={this.state.votes > 0} onClick={() => this.amendVote(comment.comment_id, 1)}>Like </button >
                                 <span></span> <span></span>
-                                <button disabled={this.state.votes === -1} onClick={() => this.amendVote(comment.comment_id, -1)}>Dislike</button></div>}
+                                <button disabled={this.state.votes < 0} onClick={() => this.amendVote(comment.comment_id, -1)}>Dislike</button></div>}
 
 
                     </div></div>

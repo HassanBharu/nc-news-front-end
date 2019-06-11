@@ -22,7 +22,7 @@ class UserLoginForm extends Component {
                 </ul>
 
                 {
-                    this.props.login ? <div> <button className="button1" onClick={this.handleLogout}>Click to logout:{usernameInput}</button> </div> :
+                    this.props.login ? <div> <button className="button1" onClick={this.handleLogout}>LOGOUT: {usernameInput || JSON.parse(localStorage.getItem('userLoggedIn'))}</button> </div> :
                         <div>
                             <label>username:</label>
                             <input onChange={this.usernameInput} className="input"></input>

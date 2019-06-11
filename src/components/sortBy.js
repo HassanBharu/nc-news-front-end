@@ -10,8 +10,6 @@ class SortBy extends Component {
     }
 
     render() {
-        /*  console.log(this.state.artilceOrder)
-         console.log(this.props) */
         return (<div>
             <h5>sort articles by:</h5>
             <select onChange={this.handleChange} value={this.state.sortBy} >

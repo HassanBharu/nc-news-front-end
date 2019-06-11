@@ -13,10 +13,9 @@ import AddArticle from './components/addArticle'
 import Users from './components/users'
 import UsersArticles from './components/usersArticles'
 
-
 class App extends Component {
   state = {
-    userLoggedIn: 'jessjelly',
+    userLoggedIn: '',
     p: 1
 
   }
@@ -45,19 +44,23 @@ class App extends Component {
     );
   }
 
+
+
   componentDidMount() {
-    this.saveToStorage()
-
-  }
-
-  saveToStorage = () => {
-    for (let userLoggedIn in this.state) {
-      localStorage.setItem(userLoggedIn, JSON.stringify(this.state[userLoggedIn]))
+    if (localStorage.getItem('userLoggedIn')) {
+      const userString = localStorage.getItem('userLoggedIn')
+      const user = JSON.parse(userString)
+      this.setState({ userLoggedIn: user })
     }
+
   }
 
   userLogin = (user) => {
+    console.log(user)
     this.setState({ userLoggedIn: user })
+
+    const parsedUser = JSON.stringify(user)
+    localStorage.setItem('userLoggedIn', parsedUser)
 
   }
 

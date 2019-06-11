@@ -10,7 +10,6 @@ class UsersArticles extends Component {
 
     render() {
         const { articles } = this.state
-        console.log(articles)
         return (
             <div>
                 <h1 style={{ textAlign: 'center' }}>Users Articles</h1>
