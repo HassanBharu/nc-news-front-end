@@ -36,7 +36,6 @@ ul {
   border-radius: 5px;
   font-size: 20px;
   text-align: center;
-  min-width: 70px;
   border: 2px inset #1C6EA4;
 }
 .navButton:hover {background-color: #1C6EA4}
@@ -93,7 +92,6 @@ a {
   font-style: normal;
   font-variant: normal;
   text-transform: capitalize;
-    background:orange url('./images/news-image.jpg');
     color: rgb(196, 106, 22);
     font-Size: 40px;
     text-Align: center;
@@ -106,7 +104,10 @@ span + span {
   margin-left: 10px;
 }
 
-
+.image {
+  height:80px;
+  width:30%;
+}
 
 .ulArticles{
   display: inline-block;

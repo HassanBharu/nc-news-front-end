@@ -57,10 +57,6 @@ class AddArticle extends Component {
             .then(article => {
                 navigate(`/articles/${article.article[0].article_id}`)
             })
-
-
-
-
     }
 
 }
