@@ -22,15 +22,19 @@ class SortBy extends Component {
         )
     }
 
-
-    handleChange = (e) => {
-        this.setState({ sortBy: e.target.value })
-        orderByQuery(e.target.value)
+    componentDidUpdate() {
+        orderByQuery(this.state.srotBy)
 
             .then(artilceOrder => {
 
                 this.props.o(artilceOrder)
             })
+    }
+
+
+    handleChange = (e) => {
+        this.setState({ sortBy: e.target.value })
+
 
     }
 

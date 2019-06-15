@@ -12,6 +12,9 @@ import ShowErrors from './components/ShowErrors'
 import AddArticle from './components/addArticle'
 import Users from './components/users'
 import UsersArticles from './components/usersArticles'
+import NavBar from './components/NavBar'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 class App extends Component {
   state = {
@@ -24,8 +27,8 @@ class App extends Component {
     const { userLoggedIn } = this.state
     return (
       <div>
+        <NavBar />
         <Header />
-
         <UserLoginForm userLoggedIn={this.userLogin} login={userLoggedIn} />
 
         <Router>

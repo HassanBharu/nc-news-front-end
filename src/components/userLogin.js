@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { getUsers } from './api'
-import { navigate } from '@reach/router'
+import { navigate, Link } from '@reach/router'
+import { Navbar, Container } from 'react-bootstrap'
+
 
 class UserLoginForm extends Component {
     state = {
@@ -12,13 +14,12 @@ class UserLoginForm extends Component {
 
         return (
 
-
             < form className="form" onSubmit={this.handleSubmit} >
                 <ul className="liHome">
-                    <button onClick={() => this.goTo('/')} className="navButton">Home</button>
-                    <button onClick={() => this.goTo('/topics')} className="navButton">Topics</button>
-                    <button onClick={() => this.goTo('/articles')} className="navButton">All Articles</button>
-                    <button onClick={() => this.goTo('/users')} className="navButton">Users</button>
+                    <Link to="/" className="navButton">Home</Link>
+                    <Link to="/topics" className="navButton">Topics</Link>
+                    <Link to="/articles" className="navButton">All Articles</Link>
+                    <Link to="/users" className="navButton">Users</Link>
                 </ul>
 
                 {

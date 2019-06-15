@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-
+/* 
 
 .link {
   border-top: 2px solid #000;
@@ -246,11 +246,11 @@ span + span {
 }
 
 /* Change the link color on hover */
-li a:hover {
+/* li a:hover {
   background-color: rgb(40, 129, 189);
   color: white;
-}
-
+}  */
+ 
 /* .ulTopics {
   border: #000;
   border-width: 1px;

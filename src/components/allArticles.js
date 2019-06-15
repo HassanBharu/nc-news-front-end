@@ -3,6 +3,7 @@ import { getAllArticles, deleteArticle } from './api'
 import { Link, navigate } from "@reach/router";
 import SortBy from './sortBy'
 import '../index.css'
+import { Button } from 'react-bootstrap'
 
 class AllArticles extends Component {
     state = {
@@ -17,7 +18,7 @@ class AllArticles extends Component {
 
             <p>
                 {this.props.loggingIn &&
-                    <button className="button3" onClick={() => navigate('/articles/newArticle')}>Add new Article</button>}
+                    <Button bsStyle="primary" onClick={() => navigate('/articles/newArticle')}>Add new Article</Button>}
             </p>
             <SortBy o={this.order} oder={this.state.articles} />
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { navigate } from '@reach/router'
 import { postArticle } from './api'
+import { Button } from 'react-bootstrap'
 
 class AddArticle extends Component {
     state = {
@@ -27,7 +28,7 @@ class AddArticle extends Component {
                     <p></p>
                     body:<textarea onChange={this.handleBody} className="input"></textarea>
 
-                    <button onClick={this.submitArticle} className="button1">submit</button>
+                    <Button onClick={this.submitArticle} bsStyle="primary">submit</Button>
                 </form>
 
             </div>
