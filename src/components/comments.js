@@ -24,14 +24,14 @@ class Comments extends Component {
                     {this.state.comments.map(comment => {
                         return <div key={comment.comment_id}>
 
-                            <li>
-                                <SingleComment comment={comment} loggedIn={this.props.loggedIn} />
 
-                                {this.props.loggedIn === comment.author
-                                    && <button className="button2" id={comment.comment_id}
-                                        onClick={() => this.handleDeleteComment(comment.comment_id)}>Delete Comment</button>}
-                                <p>    </p>
-                            </li>
+                            <SingleComment comment={comment} loggedIn={this.props.loggedIn} />
+
+                            {this.props.loggedIn === comment.author
+                                && <button className="button2" id={comment.comment_id}
+                                    onClick={() => this.handleDeleteComment(comment.comment_id)}>Delete Comment</button>}
+                            <p>    </p>
+
                         </div>
                     })
                     }</ul>

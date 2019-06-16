@@ -12,15 +12,142 @@ code {
     monospace;
 }
 
+.header{
+  border-top: rgba(215, 222, 236, 0.877);
+  border-bottom: rgba(215, 222, 236, 0.877);
+  background-color: rgba(215, 222, 236, 0.877);
+  width:100%;
+  height: 150px;
+  text-align: center;
+  vertical-align: middle;
+  top:50%;
+}
+
+li {
+  display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+  border: 50px;
+  border-width: 1px;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 60%;
+   min-width: 60%;
+  position: relative;
+  border: 2px solid rgb(7, 15, 26);
+  border-radius: 5px;
+  margin-bottom: 15px;
+  -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+  box-shadow: 3px 3px 15px 5px #000000;
+  display: inline-block;
+  left:17%;
+}
+
+li:hover {
+  background-color: rgb(3, 5, 7);
+  color: rgb(3, 4, 17);
+}
+
+/* a {
+  -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+  box-shadow: 3px 3px 15px 5px #000000;
+  display: inline-block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-width: 1px;
+  border: 2px inset #1C6EA4;
+  border-radius: 5px;
+  text-align: center;
+  height: 160px;
+  width:70%;
+} */
+
+.deleteCommentButton {
+  display:block;
+  color: #000;
+  padding: 8px 16px;
+  background:rgb(28, 151, 192);
+  border: 2px solid rgb(0, 0, 0) ;
+  max-width: 80%;
+  min-width: 70%;
+  
+ 
+}
+
+.eachComment{
+  border:none;
+  display:block;
+  background-color: rgb(202, 203, 207);
+  color: #000;
+  text-align: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-width: 1px;
+  border-style: inset;
+  border: 2px solid rgb(2, 2, 2) ;
+  border-radius: 5px;
+  margin-top:5px;
+  margin-bottom: 0px;
+  max-width: 80%;
+  min-width: 70%;
+}
+
+.commentBody {
+  display:block;
+  color: #000;
+  padding: 8px 16px;
+  max-width: 80%;
+  min-width: 70%;
+  border: 2px solid rgb(0, 0, 0) ;
+}
+
+.button3 {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  border: 2px solid rgb(216, 164, 109);
+  float:right;
+  right:5%;
+  font-size: 20px;
+}
+
+.button2 {
+  background-color: #008CBA;
+  border-radius: 5px
+}
+.button2:hover {background-color: red}
+
+.button2:active {
+  background-color: red;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  border: 2px solid rgb(216, 164, 109);
+}
+
+.myText {
+  width: 300px;
+  height:50px;
+  margin-bottom:5px;
+
+}
+
+.myText2 {
+  width: 900px;
+  height:500px;
+  margin-bottom:5px;
+
+}
+
+
+
 /* 
 
-.link {
-  border-top: 2px solid #000;
-  border-bottom: 2px solid black;
-  border-left: 2px solid black;
-  border-right: 2px solid black;
-  
-}
+
 
 ul {
   list-style-type: none;
@@ -44,35 +171,9 @@ ul {
   background-color: #1C6EA4;
 }
 
-li {
-  display: inline-block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-  border: 50px;
-  border-width: 1px;
-  border-radius: 5px;
-  text-align: left;
-  left:17%;
-  max-width: 80%;
-   min-width: 80%;
-  position: relative;
-}
 
-a {
-  -webkit-box-shadow: 5px 5px 15px 5px #000000; 
-  box-shadow: 3px 3px 15px 5px #000000;
-  display: inline-block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-  border-width: 1px;
-  border: 2px inset #1C6EA4;
-  border-radius: 5px;
-  text-align: center;
-  height: 160px;
-  width:70%;
-}
+
+
 
 
 
@@ -129,40 +230,9 @@ span + span {
   border-top: 2px solid orange;
 }
 
-.eachComment{
-  display:block;
-  background-color: rgb(202, 203, 207);
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-  border-width: 1px;
-  border-style: inset;
-  border: 2px solid rgb(2, 2, 2) ;
-  border-radius: 5px;
-  margin-top:0px;
-  margin-bottom: 0px;
-}
 
-.commentBody {
-  display:block;
-  color: #000;
-  padding: 8px 16px;
 
-  border: 2px solid rgb(0, 0, 0) ;
-  
- 
-}
 
-.deleteCommentButton {
-  display:block;
-  color: #000;
-  padding: 8px 16px;
-  background:rgb(28, 151, 192);
-
-  border: 2px solid rgb(0, 0, 0) ;
-  
- 
-}
 
 .deleteCommentButton:hover {background-color: red}
 
@@ -186,33 +256,9 @@ span + span {
   display: inline-block;
 }
 
-.button1 {
-  background-color: white;
-  color: black;
-  border-radius: 5px;
-  border: 2px solid rgb(216, 164, 109);
-}
-
-.button2 {
-  background-color: #008CBA;
-  border-radius: 5px
-}
-.button2:hover {background-color: red}
-
-.button2:active {
-  background-color: red;
-}
 
 
-.button3 {
-  background-color: white;
-  color: black;
-  border-radius: 5px;
-  border: 2px solid rgb(216, 164, 109);
-  float:right;
-  right:5%;
-  font-size: 20px;
-}
+
 
 
   .form  {
@@ -246,10 +292,7 @@ span + span {
 }
 
 /* Change the link color on hover */
-/* li a:hover {
-  background-color: rgb(40, 129, 189);
-  color: white;
-}  */
+/*  */
  
 /* .ulTopics {
   border: #000;

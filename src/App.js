@@ -6,7 +6,7 @@ import './App.css';
 import UserLoginForm from "./components/userLogin";
 import SingleArticle from './components/singleArticle'
 import Topics from './components/topics'
-import TopicByArticle from './components/topicByArticle'
+import ArticleByTopics from './components/ArticleByTopics'
 import AllArticles from './components/allArticles'
 import ShowErrors from './components/ShowErrors'
 import AddArticle from './components/addArticle'
@@ -14,6 +14,7 @@ import Users from './components/users'
 import UsersArticles from './components/usersArticles'
 import NavBar from './components/NavBar'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import LogInForm from './components/logInForm'
 
 
 class App extends Component {
@@ -27,17 +28,16 @@ class App extends Component {
     const { userLoggedIn } = this.state
     return (
       <div>
-        <NavBar />
+        <NavBar loggingIn={this.state.userLoggedIn} />
         <Header />
-        <UserLoginForm userLoggedIn={this.userLogin} login={userLoggedIn} />
-
         <Router>
           <Home path="/" />
+          <UserLoginForm path="/login" userLoggedIn={this.userLogin} login={userLoggedIn} />
           <AllArticles path="/articles" loggingIn={this.state.userLoggedIn} />
           <AddArticle path="/articles/newArticle" loggingIn={this.state.userLoggedIn} />
           <SingleArticle path="/articles/:article_id" loggingIn={this.state.userLoggedIn} />
           <Topics path="/topics/" loggingIn={this.state.userLoggedIn} />
-          <TopicByArticle path="/topics/:topic" loggingIn={this.state.userLoggedIn} />
+          <ArticleByTopics path="/topics/:topic" loggingIn={this.state.userLoggedIn} />
           <Users path="/users" />
           <UsersArticles path="/users/:username/articles" />
           <ShowErrors default path="/error" />

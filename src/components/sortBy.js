@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { orderByQuery } from './api'
+import { Dropdown } from 'react-bootstrap'
 
 
 class SortBy extends Component {
@@ -11,19 +12,27 @@ class SortBy extends Component {
 
     render() {
         return (<div>
-            <h5>sort articles by:</h5>
-            <select onChange={this.handleChange} value={this.state.sortBy} >
-                <option>select order</option>
-                <option value="votes" > Votes </option>
-                <option value="comment_count"> Comment Count </option>
-                <option value="created_at"> Created At </option>
-            </select>
+
+            <Dropdown>
+                <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                    Sort Articles By
+  </Dropdown.Toggle>
+
+                <Dropdown.Menu value={this.state.sortBy}>
+                    <Dropdown.Item as="button" value="votes" onClick={this.handleChange}>Votes</Dropdown.Item>
+                    <Dropdown.Item as="button" value="comment_count" onClick={this.handleChange}>Comments</Dropdown.Item>
+                    <Dropdown.Item as="button" value="created_at" onClick={this.handleChange}>Created Time</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
+
+
+
         </div>
         )
     }
 
     componentDidUpdate() {
-        orderByQuery(this.state.srotBy)
+        orderByQuery(this.state.sortBy)
 
             .then(artilceOrder => {
 
@@ -33,6 +42,8 @@ class SortBy extends Component {
 
 
     handleChange = (e) => {
+        console.log(e.target.value)
+
         this.setState({ sortBy: e.target.value })
 
 

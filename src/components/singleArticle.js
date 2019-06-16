@@ -22,7 +22,7 @@ class SingleArticle extends Component {
 
                 {body}
                 <p></p>
-                <div className="ulArticles"> Written By: {author}  <span></span> <span></span> {created_at}<p></p>Votes: {votes + this.state.vote}
+                <div className="ulArticles"> Written By: {author}  <p></p>Date: {created_at}<p></p>Votes: {votes + this.state.vote}
                     {this.props.loggingIn &&
                         <div>
 

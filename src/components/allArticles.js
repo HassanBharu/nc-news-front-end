@@ -11,14 +11,13 @@ class AllArticles extends Component {
         order: null
     }
     render() {
-        console.log(this.state.order)
         return (<div>
 
 
 
             <p>
                 {this.props.loggingIn &&
-                    <Button bsStyle="primary" onClick={() => navigate('/articles/newArticle')}>Add new Article</Button>}
+                    <Button block bsstyle="primary" className="m-auto" onClick={() => navigate('/articles/newArticle')}>Add new Article</Button>}
             </p>
             <SortBy o={this.order} oder={this.state.articles} />
 
@@ -28,9 +27,10 @@ class AllArticles extends Component {
                 {this.state.articles.map(article => {
                     return <li key={article.article_id} ><Link to={`/articles/${article.article_id}`} ><b>{article.title}</b><p>Written By: {article.author} <span></span><span></span> comment_count: {article.comment_count} <span></span><span></span> Created_At: {article.created_at} </p><p>Article Votes: {article.votes}</p></Link>
 
-                        {this.props.loggingIn === article.author && <button className="deleteCommentButton" onClick={() => this.handleDeleteArticle(article.article_id)} >Delete Article: {article.title}</button>
-                        }
                         <p></p>
+                        {
+                            this.props.loggingIn === article.author && <button className="deleteCommentButton" onClick={() => this.handleDeleteArticle(article.article_id)} >Delete Article: {article.title}</button>
+                        }
                     </li>
                 })}
             </ul>
@@ -44,7 +44,6 @@ class AllArticles extends Component {
     }
 
     handleDeleteArticle = (id) => {
-        console.log(id)
         deleteArticle(id).then(() => {
             this.setState(prevState => {
                 return {

@@ -3,7 +3,7 @@ import { getTopicsbyQuery } from './api'
 import { Link, navigate } from "@reach/router";
 import SortBy from './sortBy'
 
-class TopicByArticle extends Component {
+class ArticleByTopics extends Component {
 
     state = {
         topicArticle: []
@@ -39,4 +39,4 @@ class TopicByArticle extends Component {
 
 }
 
-export default TopicByArticle
+export default ArticleByTopics

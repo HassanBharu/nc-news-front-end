@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { navigate } from '@reach/router'
 import { postArticle } from './api'
 import { Button } from 'react-bootstrap'
+import '../index.css'
 
 class AddArticle extends Component {
     state = {
@@ -13,6 +14,7 @@ class AddArticle extends Component {
     render() {
         return (
             <div>
+                {this.props.logg}
                 <h3 style={{ textAlign: 'center' }}>Add a new article</h3>
 
                 <form >
@@ -26,7 +28,7 @@ class AddArticle extends Component {
                     </select>
 
                     <p></p>
-                    body:<textarea onChange={this.handleBody} className="input"></textarea>
+                    body:<textarea className="myText2" onChange={this.handleBody} className="input"></textarea>
 
                     <Button onClick={this.submitArticle} bsStyle="primary">submit</Button>
                 </form>
