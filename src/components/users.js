@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from '@reach/router'
 import { getAllUsers } from './api'
 import '../index.css'
+import { Card, Button } from 'react-bootstrap'
 
 class Users extends Component {
     state = {
@@ -14,10 +15,23 @@ class Users extends Component {
 
         return (
             <div>
-                <h1 style={{ textAlign: 'center' }}>Users</h1>
+
+
+                <h2 style={{ textAlign: 'center', fontWeight: 'bold', textDecoration: 'underline' }}>Users</h2>
                 <ul>
                     {users.map(user => {
-                        return <li key={user.username}> <Link to={`${user.username}/articles`}>{user.name} A.K.A<span></span> {user.username}<p></p><img src={`${user.avatar_url}`} className="image" /></Link></li>
+
+
+                        return <div><Card style={{ width: '18rem' }}>
+                            <Card.Img variant="top" src={`${user.avatar_url}`} />
+                            <Card.Body>
+                                <Card.Header>{user.username}</Card.Header>
+                                <Card.Title>{}</Card.Title>
+                                <Button variant="primary" href={`/users/${user.username}/articles`} >My Articles</Button>
+                            </Card.Body>
+                        </Card>
+
+                        </div>
                     })}
                 </ul>
             </div>

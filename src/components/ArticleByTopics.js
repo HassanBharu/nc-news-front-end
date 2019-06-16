@@ -10,13 +10,13 @@ class ArticleByTopics extends Component {
     }
 
     render() {
-        console.log(this.props.loggingIn)
+
         return (
             <div>
                 {this.props.loggingIn &&
                     <button className="button3" onClick={() => navigate('/articles/newArticle')}> Add New Article</button>}
                 <SortBy o={this.order} />
-                <h2 style={{ textAlign: "center" }}>Articles Per Topic</h2>
+                <h2 style={{ textAlign: "center", fontWeight: 'bold', textDecoration: 'underline' }}>Articles Available </h2>
                 <ul>
                     {this.state.topicArticle.map(article => {
                         return <li key={article.article_id} ><Link to={`/articles/${article.article_id}`} ><b>{article.title}</b> <p>Written By: {article.author} <span></span><span></span>  Comment Count: {article.comment_count} <span></span><span></span> Created At: {article.created_at} </p><p>Article Votes: {article.votes}</p></Link></li>

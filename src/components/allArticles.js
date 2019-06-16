@@ -17,15 +17,15 @@ class AllArticles extends Component {
 
             <p>
                 {this.props.loggingIn &&
-                    <Button block bsstyle="primary" className="m-auto" onClick={() => navigate('/articles/newArticle')}>Add new Article</Button>}
+                    <Button variant="info" bsStyle="info" onClick={() => navigate('/articles/newArticle')}>Add new Article</Button>}
             </p>
-            <SortBy o={this.order} oder={this.state.articles} />
 
-            <h1 style={{ textAlign: 'center' }}>All Articles</h1>
+            <SortBy o={this.order} oder={this.state.articles} />
+            <h2 style={{ textAlign: 'center', fontWeight: 'bold', textDecoration: 'underline' }}>All Articles</h2>
             <ul >
                 {/* listing all the articles in a list */}
                 {this.state.articles.map(article => {
-                    return <li key={article.article_id} ><Link to={`/articles/${article.article_id}`} ><b>{article.title}</b><p>Written By: {article.author} <span></span><span></span> comment_count: {article.comment_count} <span></span><span></span> Created_At: {article.created_at} </p><p>Article Votes: {article.votes}</p></Link>
+                    return <li key={article.article_id} ><Link to={`/articles/${article.article_id}`} ><b>{article.title}</b><p>Written By: {article.author} <p></p> comment_count: {article.comment_count} <span></span><span></span> Created: {article.created_at} </p><p style={{ color: 'green' }}>Article Votes: {article.votes}</p></Link>
 
                         <p></p>
                         {

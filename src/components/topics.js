@@ -13,6 +13,7 @@ class Topics extends Component {
         return (
             <div>
                 <p></p>
+                <h2 style={{ textAlign: 'center', fontWeight: 'bold', textDecoration: 'underline' }}>Topics</h2>
 
                 <ul>    {this.state.topics.map(topic => {
                     return <li key={topic.slug}><Link to={`/topics/${topic.slug}`} > {topic.slug} <p>Description: {topic.description}</p></Link></li>

@@ -18,14 +18,14 @@ class SingleArticle extends Component {
         const { title, body, votes, created_at, author } = this.state.singleArticle
         return (
             < div >
-                <h2 style={{ textAlign: 'center' }}>Article <p>{title}</p></h2>
+                <h2 style={{ textAlign: 'center' }}> <p>{title}</p></h2>
 
                 {body}
                 <p></p>
-                <div className="ulArticles"> Written By: {author}  <p></p>Date: {created_at}<p></p>Votes: {votes + this.state.vote}
+                <div className="ulArticles"> Written By: {author}  <p></p>Date: {created_at}<p></p>
                     {this.props.loggingIn &&
                         <div>
-
+                            Vote: {votes + this.state.vote} <span></span><span></span>
                             <button className="button1" disabled={this.state.vote === 1} onClick={() => this.amendVote(1)}>Like</button >
                             <span></span><span></span>
                             <button className="button1" disabled={this.state.vote === -1} onClick={() => this.amendVote(-1)}>Dislike</button>

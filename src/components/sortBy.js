@@ -14,8 +14,8 @@ class SortBy extends Component {
         return (<div>
 
             <Dropdown>
-                <Dropdown.Toggle variant="primary" id="dropdown-basic">
-                    Sort Articles By
+                <Dropdown.Toggle variant="info" id="dropdown-basic">
+                    Search By
   </Dropdown.Toggle>
 
                 <Dropdown.Menu value={this.state.sortBy}>

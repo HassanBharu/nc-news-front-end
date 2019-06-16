@@ -15,22 +15,22 @@ class AddArticle extends Component {
         return (
             <div>
                 {this.props.logg}
-                <h3 style={{ textAlign: 'center' }}>Add a new article</h3>
+                <h4 style={{ textAlign: 'center', backgroundColor: 'lightblue' }}>Add a new article</h4>
 
                 <form >
                     Title: <input onChange={this.handleTitle} className="input"></input>
                     <p></p>
 
-                    topic: <select onChange={this.handleTopic} className="button1">
-                        <option>cooking</option>
-                        <option>football</option>
-                        <option>coding</option>
+                    Topic: <select onChange={this.handleTopic} className="button1">
+                        <option>Cooking</option>
+                        <option>Football</option>
+                        <option>Coding</option>
                     </select>
 
                     <p></p>
-                    body:<textarea className="myText2" onChange={this.handleBody} className="input"></textarea>
-
-                    <Button onClick={this.submitArticle} bsStyle="primary">submit</Button>
+                    Body:<textarea className="myText2" onChange={this.handleBody} className="input"></textarea>
+                    <p></p>
+                    <Button onClick={this.submitArticle} bsStyle="info">Submit</Button>
                 </form>
 
             </div>

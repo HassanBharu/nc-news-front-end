@@ -16,14 +16,10 @@ class NavBar extends Component {
         return (
 
             <Navbar bg="dark" expand="lg">
-                <Navbar.Brand href="/">NcNews</Navbar.Brand>
-                {this.props.loggingIn ? <Nav.Link href="/login"> <Navbar.Text className="mr text-white text-uppercase"> click to logout:  {this.props.loggingIn} </Navbar.Text></Nav.Link> :
-                    <Nav.Link className="mr text-white text-uppercase" href="/login">
-                        click to sign in
-            </Nav.Link>}
+                <Navbar.Brand style={{ fontWeight: 'bold', color: 'lightgreen' }} href="/">NcNews</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ml-auto">
+                    <Nav className="m-auto">
                         <Nav.Link className="text-white text-uppercase ml-5" href="/">HOME</Nav.Link>
                         <Nav.Link className="nav-link text-white text-uppercase ml-5" href="/topics">TOPICS</Nav.Link>
                         <Nav.Link className="nav-link text-white text-uppercase ml-5" href="/users">USERS</Nav.Link>
@@ -39,6 +35,10 @@ class NavBar extends Component {
                         </Dropdown>
 
                     </Nav>
+                    {this.props.loggingIn ? <Nav.Link href="/login"> <Navbar.Text className="mr text-white text-uppercase"> Sign out:  <span></span> <span></span>{this.props.loggingIn} </Navbar.Text></Nav.Link> :
+                        <Nav.Link className="mr text-white text-uppercase" href="/login">
+                            sign in
+                                </Nav.Link>}
                 </Navbar.Collapse>
 
 
