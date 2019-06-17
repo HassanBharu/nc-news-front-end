@@ -31,13 +31,14 @@ class SortBy extends Component {
         )
     }
 
-    componentDidUpdate() {
-        orderByQuery(this.state.sortBy)
+    componentDidUpdate(prevProps, prevState) {
 
-            .then(artilceOrder => {
+        if (prevState.sortBy !== this.state.sortBy)
+            orderByQuery(this.state.sortBy)
 
-                this.props.o(artilceOrder)
-            })
+                .then(artilceOrder => {
+                    this.props.o(artilceOrder)
+                })
     }
 
 

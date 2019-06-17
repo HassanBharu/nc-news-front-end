@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { navigate } from '@reach/router'
 import { postArticle } from './api'
 import { Button } from 'react-bootstrap'
-import '../index.css'
 
 class AddArticle extends Component {
     state = {
@@ -15,22 +14,23 @@ class AddArticle extends Component {
         return (
             <div>
                 {this.props.logg}
-                <h4 style={{ textAlign: 'center', backgroundColor: 'lightblue' }}>Add a new article</h4>
+                <h2 style={{ textAlign: 'center', fontWeight: 'bold', backgroundColor: 'lightblue' }}>Add a new article</h2>
 
                 <form >
                     Title: <input onChange={this.handleTitle} className="input"></input>
                     <p></p>
 
                     Topic: <select onChange={this.handleTopic} className="button1">
-                        <option>Cooking</option>
-                        <option>Football</option>
-                        <option>Coding</option>
+                        <option>....select</option>
+                        <option>cooking</option>
+                        <option>football</option>
+                        <option>coding</option>
                     </select>
 
                     <p></p>
-                    Body:<textarea className="myText2" onChange={this.handleBody} className="input"></textarea>
-                    <p></p>
-                    <Button onClick={this.submitArticle} bsStyle="info">Submit</Button>
+                    Body:<textarea onChange={this.handleBody} className="input"></textarea>
+
+                    <Button onClick={this.submitArticle} bsStyle="primary">submit</Button>
                 </form>
 
             </div>
@@ -59,6 +59,8 @@ class AddArticle extends Component {
         postArticle(title, body, topic, this.props.loggingIn)
             .then(article => {
                 navigate(`/articles/${article.article[0].article_id}`)
+            }).catch(({ response }) => {
+                navigate('/error', { replace: true, state: { From: 'topics', msg: response.data.msg, status: response.status } })
             })
     }
 

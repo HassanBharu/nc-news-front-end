@@ -24,22 +24,23 @@ class AllArticles extends Component {
             <h2 style={{ textAlign: 'center', fontWeight: 'bold', textDecoration: 'underline' }}>All Articles</h2>
             <ul >
                 {/* listing all the articles in a list */}
-                {this.state.articles.map(article => {
-                    return <li key={article.article_id} ><Link to={`/articles/${article.article_id}`} ><b>{article.title}</b><p>Written By: {article.author} <p></p> comment_count: {article.comment_count} <span></span><span></span> Created: {article.created_at} </p><p style={{ color: 'green' }}>Article Votes: {article.votes}</p></Link>
+                {
 
-                        <p></p>
-                        {
-                            this.props.loggingIn === article.author && <button className="deleteCommentButton" onClick={() => this.handleDeleteArticle(article.article_id)} >Delete Article: {article.title}</button>
-                        }
-                    </li>
-                })}
+                    this.state.articles.map(article => {
+                        return <li key={article.article_id} ><Link to={`/articles/${article.article_id}`} ><b style={{ textDecoration: 'underline' }}>{article.title}</b><p>Written By: {article.author} </p><p style={{ color: 'black' }}> comment_count: {article.comment_count} <span></span><span></span> Created: {article.created_at} </p><p style={{ color: 'green' }}>Article Votes: {article.votes}</p></Link>
+
+                            <p></p>
+                            {
+                                this.props.loggingIn === article.author && <Button block variant="warning" onClick={() => this.handleDeleteArticle(article.article_id)} > <span style={{ fontWeight: 'bold' }}>Delete Article: </span>{article.title}</Button>
+                            }
+                        </li>
+                    })}
             </ul>
         </div>
         )
     }
 
     order = (order) => {
-
         this.setState({ articles: order })
     }
 

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from '@reach/router'
 import { getAllUsers } from './api'
 import '../index.css'
 import { Card, Button } from 'react-bootstrap'

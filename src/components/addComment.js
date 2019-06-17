@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { postComment } from './api'
+import { navigate } from '@reach/router'
 
 class AddComment extends Component {
 
@@ -39,6 +40,8 @@ class AddComment extends Component {
             .then(comment => {
                 this.props.addComment(comment)
 
+            }).catch(({ response }) => {
+                navigate('/error', { replace: true, state: { From: 'topics', msg: response.data.msg, status: response.status } })
             })
 
 

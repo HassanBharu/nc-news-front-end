@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { getUsers } from './api'
-import { navigate, Link } from '@reach/router'
-import { Form, Button } from 'react-bootstrap'
+import { navigate } from '@reach/router'
+import { Button } from 'react-bootstrap'
 
 
 class UserLoginForm extends Component {
@@ -9,7 +9,6 @@ class UserLoginForm extends Component {
         usernameInput: ''
     }
     render() {
-        const { usernameInput } = this.state
 
 
         return (

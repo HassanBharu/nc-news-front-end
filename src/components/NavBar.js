@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import { getUsers } from './api'
-import { Link, navigate } from '@reach/router'
 import '../index.css'
-import { NavDropdown, Navbar, Nav, Dropdown, Form, FormControl, Button } from 'react-bootstrap'
+import { NavDropdown, Navbar, Nav, Dropdown } from 'react-bootstrap'
 import DropdownMenu from 'react-bootstrap/DropdownMenu';
-import UserLoginForm from './userLogin'
+
 
 class NavBar extends Component {
     state = {
@@ -30,7 +28,7 @@ class NavBar extends Component {
                             <DropdownMenu>
                                 <NavDropdown.Item href="/articles">All Articles</NavDropdown.Item>
                                 {this.props.loggingIn &&
-                                    <NavDropdown.Item href="articles/newArticle">Add Articles</NavDropdown.Item>}
+                                    <NavDropdown.Item href="/articles/newArticle">Add Articles</NavDropdown.Item>}
                             </DropdownMenu>
                         </Dropdown>
 
