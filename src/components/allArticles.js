@@ -17,7 +17,7 @@ class AllArticles extends Component {
 
             <p>
                 {this.props.loggingIn &&
-                    <Button variant="info" bsStyle="info" onClick={() => navigate('/articles/newArticle')}>Add new Article</Button>}
+                    <Button variant="info" onClick={() => navigate('/articles/newArticle')}>Add new Article</Button>}
             </p>
 
             <SortBy o={this.order} oder={this.state.articles} />

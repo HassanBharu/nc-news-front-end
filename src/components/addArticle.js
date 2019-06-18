@@ -30,7 +30,7 @@ class AddArticle extends Component {
                     <p></p>
                     Body:<textarea onChange={this.handleBody} className="input"></textarea>
 
-                    <Button onClick={this.submitArticle} bsStyle="primary">submit</Button>
+                    <Button onClick={this.submitArticle} bsstyle="primary">submit</Button>
                 </form>
 
             </div>
