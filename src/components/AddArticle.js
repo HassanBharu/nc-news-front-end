@@ -16,7 +16,7 @@ class AddArticle extends Component {
                 {this.props.logg}
                 <h4 style={{ textAlign: 'center', fontWeight: 'bold', backgroundColor: 'lightblue' }}>Add a new article</h4>
 
-                <form >
+                <form className="addArticle">
                     Title: <input onChange={this.handleTitle} className="input"></input>
                     <p></p>
 

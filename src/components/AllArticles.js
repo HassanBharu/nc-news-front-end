@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { getAllArticles, deleteArticle } from './api'
 import { Link, navigate } from "@reach/router";
 import SortBy from './SortBy'
+import ArticleCard from './ArticleCard'
 import '../index.css'
 import { Button } from 'react-bootstrap'
 
@@ -17,19 +18,24 @@ class AllArticles extends Component {
 
             <p>
                 {this.props.loggingIn &&
-                    <Button variant="info" onClick={() => navigate('/articles/newArticle')}>Add new Article</Button>}
+                    <Button variant="info" onClick={() => navigate('/articles/newArticle')}>Add new Article</Button>
+                }
             </p>
 
             <SortBy o={this.order} oder={this.state.articles} />
+
             <h2 style={{ textAlign: 'center', fontWeight: 'bold', textDecoration: 'underline' }}>All Articles</h2>
             <ul >
-                {/* listing all the articles in a list */}
+
                 {
 
                     this.state.articles.map(article => {
-                        return <li key={article.article_id} ><Link to={`/articles/${article.article_id}`} ><b style={{ textDecoration: 'underline' }}>{article.title}</b><p>Written By: {article.author} </p><p style={{ color: 'black' }}> comment_count: {article.comment_count} <span></span><span></span> Created: {article.created_at} </p><p style={{ color: 'green' }}>Article Votes: {article.votes}</p></Link>
+                        return <li key={article.article_id} ><Link to={`/articles/${article.article_id}`} >
 
-                            <p></p>
+                            <ArticleCard article={article} />
+
+                        </Link>
+
                             {
                                 this.props.loggingIn === article.author && <Button block variant="warning" onClick={() => this.handleDeleteArticle(article.article_id)} > <span style={{ fontWeight: 'bold' }}>Delete Article: </span>{article.title}</Button>
                             }

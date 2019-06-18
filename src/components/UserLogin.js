@@ -15,21 +15,36 @@ class UserLoginForm extends Component {
 
 
 
-            < form className="form" onSubmit={this.handleSubmit} >
+            < form onSubmit={this.handleSubmit} >
 
                 {
-                    this.props.login ? <div> <h5 style={{ backgroundColor: 'lightgreen', textAlign: 'center' }}>Thank You For Visiting NcNews</h5>
-                        <div style={{
-                            left: '50px'
-                        }}>
-                            <p>Are you sure you want to Sign Out?</p>
-                            < Button variant="info" bsStyle="info" onClick={this.handleLogout} > YES</Button> < Button variant="info" bsStyle="info" href="/" > NO</Button></div></div> :
+                    this.props.login ?
                         <div>
+
+                            <h5 style={{ backgroundColor: 'lightgreen', textAlign: 'center' }}>Thank You For Visiting NcNews</h5>
+
+                            <div className="center">
+
+                                <p>Are you sure you want to Sign Out?</p>
+
+                                < Button variant="info" bsStyle="info" onClick={this.handleLogout} > YES</Button>
+
+                                <span></span><span></span>
+
+                                < Button variant="info" bsStyle="info" href="/" > NO</Button></div></div> :
+
+                        <div >
+
                             <h5 style={{ backgroundColor: 'lightgreen', textAlign: 'center', fontWeight: 'bold' }}>Welcome Back</h5>
-                            <label style={{ fontWeight: 'bold' }}>Username: </label><span></span><span></span>
-                            <input placeholder=" default user: jessjelly" onChange={this.usernameInput} className="input"></input>
-                            <p></p>
-                            <Button variant='info' type='submit'>Sign In</Button>
+                            <div className="center">
+                                <label style={{ fontWeight: 'bold' }}>Username: </label><span></span><span></span>
+
+                                <input placeholder=" default user: jessjelly" onChange={this.usernameInput} className="input"></input>
+                                <p></p>
+
+                                <Button variant='info' type='submit'>Sign In</Button>
+                            </div>
+
                         </div>
                 }
             </form >

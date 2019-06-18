@@ -19,11 +19,11 @@ class SingleArticle extends Component {
         const { title, body, votes, created_at, author } = this.state.singleArticle
         return (
             < div >
-                <h2 style={{ textAlign: 'center' }}> <p>{title}</p></h2>
+                <h2 style={{ textAlign: 'center', textDecoration: "underline" }}> <p>{title}</p></h2>
 
                 {body}
                 <p></p>
-                <div className="ulArticles"> Written By: {author}  <p></p>Date: {created_at}<p></p>
+                <div> <span></span>Written By: {author}  <p></p>Date: {created_at}<p></p>
 
                     Vote: {this.state.vote + votes}
 

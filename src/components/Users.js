@@ -17,18 +17,24 @@ class Users extends Component {
 
 
                 <h2 style={{ textAlign: 'center', fontWeight: 'bold', textDecoration: 'underline' }}>Users</h2>
-                <ul>
+                <ul key={users.username}>
                     {users.map(user => {
 
 
-                        return <div><Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={`${user.avatar_url}`} />
-                            <Card.Body>
+                        return <div className="userCard" >
+
+                            <Card  >
                                 <Card.Header>{user.username}</Card.Header>
                                 <Card.Title>{}</Card.Title>
-                                <Button variant="primary" href={`/users/${user.username}/articles`} >My Articles</Button>
-                            </Card.Body>
-                        </Card>
+
+                                <Card.Img variant="top" src={`${user.avatar_url}`} />
+
+                                <Card.Body>
+                                    <Button variant="primary" href={`/users/${user.username}/articles`} >My Articles</Button>
+                                </Card.Body>
+                            </Card>
+
+
 
                         </div>
                     })}

@@ -10,27 +10,21 @@ class SingleComment extends Component {
 
     render() {
         const { comment } = this.props
-
+        console.log(comment)
         return (
             <div>
                 <div className="eachComment" >
 
 
 
-                    <div >{comment.author} says: <p></p> {comment.body}
-
-
+                    <div><span style={{ textDecoration: 'underline', fontWeight: 'bold' }}>  {comment.author}</span> says: <p></p> {comment.body}
 
                         <p></p>
-
-
-
-
 
                     </div></div>
                 {<span className="commentBody">
 
-                    {this.props.loggedIn &&
+                    {this.props.loggedIn ?
 
                         <div >
 
@@ -39,7 +33,12 @@ class SingleComment extends Component {
                             <span></span> <span></span>
 
                             <button disabled={this.state.votes < 0} onClick={() => this.amendVote(comment.comment_id, -1)}>Dislike</button>
-                            <span style={{ float: 'right' }} >created: {comment.created_at}</span></div>}
+                            <span style={{ float: 'right' }} >created: {comment.created_at}</span></div> :
+                        <div>
+
+                            votes: {comment.votes + this.state.votes}
+                            <span style={{ float: 'right' }} >created: {comment.created_at}</span>
+                        </div>}
                 </span>}
 
 
