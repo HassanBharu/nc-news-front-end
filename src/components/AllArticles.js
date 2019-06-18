@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { getAllArticles, deleteArticle } from './api'
 import { Link, navigate } from "@reach/router";
-import SortBy from './sortBy'
+import SortBy from './SortBy'
 import '../index.css'
 import { Button } from 'react-bootstrap'
 

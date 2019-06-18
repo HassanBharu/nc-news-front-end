@@ -14,7 +14,7 @@ class AddArticle extends Component {
         return (
             <div>
                 {this.props.logg}
-                <h2 style={{ textAlign: 'center', fontWeight: 'bold', backgroundColor: 'lightblue' }}>Add a new article</h2>
+                <h4 style={{ textAlign: 'center', fontWeight: 'bold', backgroundColor: 'lightblue' }}>Add a new article</h4>
 
                 <form >
                     Title: <input onChange={this.handleTitle} className="input"></input>
@@ -48,9 +48,6 @@ class AddArticle extends Component {
 
     handleBody = (bodyInfo) => {
         this.setState({ body: bodyInfo.target.value })
-    }
-
-    componentDidMount() {
     }
 
     submitArticle = (e) => {

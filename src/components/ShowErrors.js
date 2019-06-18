@@ -4,7 +4,7 @@ import React from 'react'
 const ShowErrors = (props) => {
     const { status, From, msg } = props.location.state
 
-    //  console.log(props)
+
 
     return msg ? (
         <div>

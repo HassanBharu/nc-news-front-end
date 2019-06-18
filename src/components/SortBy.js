@@ -43,7 +43,7 @@ class SortBy extends Component {
 
 
     handleChange = (e) => {
-        console.log(e.target.value)
+
 
         this.setState({ sortBy: e.target.value })
 

@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import Header from './components/header'
+import Header from './components/Header'
 import Home from './components/Home'
 import { Router } from "@reach/router";
 import './App.css';
-import UserLoginForm from "./components/userLogin";
-import SingleArticle from './components/singleArticle'
-import Topics from './components/topics'
+import UserLoginForm from "./components/UserLogin";
+import SingleArticle from './components/SingleArticle'
+import Topics from './components/Topics'
 import ArticleByTopics from './components/ArticleByTopics'
-import AllArticles from './components/allArticles'
+import AllArticles from './components/AllArticles'
 import ShowErrors from './components/ShowErrors'
-import AddArticle from './components/addArticle'
-import Users from './components/users'
-import UsersArticles from './components/usersArticles'
+import AddArticle from './components/AddArticle'
+import Users from './components/Users'
+import UsersArticles from './components/UsersArticles'
 import NavBar from './components/NavBar'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -59,7 +59,6 @@ class App extends Component {
   }
 
   userLogin = (user) => {
-    console.log(user)
     this.setState({ userLoggedIn: user })
 
     const parsedUser = JSON.stringify(user)

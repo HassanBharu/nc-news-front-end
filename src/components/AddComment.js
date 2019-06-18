@@ -16,7 +16,7 @@ class AddComment extends Component {
 
             <div>
                 <form onSubmit={this.handleClick}>
-                    <input className="myText" id="commentInput" onChange={this.bodyOfPost}></input>  <button onClick={this.clear}>Add Comment!</button>
+                    <input className="myText" id="commentInput" onChange={this.newComment}></input>  <button onClick={this.clear}>Add Comment!</button>
                 </form>
             </div>
         )
@@ -24,7 +24,7 @@ class AddComment extends Component {
 
 
 
-    bodyOfPost = (inputText) => {
+    newComment = (inputText) => {
         this.setState({ body: inputText.target.value })
 
     }
@@ -41,7 +41,7 @@ class AddComment extends Component {
                 this.props.addComment(comment)
 
             }).catch(({ response }) => {
-                navigate('/error', { replace: true, state: { From: 'topics', msg: response.data.msg, status: response.status } })
+                navigate('/error', { replace: true, state: { From: 'comments cannot be empty', msg: response.data.msg, status: response.status } })
             })
 
 

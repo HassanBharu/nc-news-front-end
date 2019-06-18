@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { getArticles } from './api'
 import { Link } from "@reach/router";
-import SortBy from './sortBy'
+import SortBy from './SortBy'
 
 class Home extends Component {
     state = {

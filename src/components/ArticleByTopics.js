@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { getTopicsbyQuery } from './api'
 import { Link, navigate } from "@reach/router";
-import SortBy from './sortBy'
+import SortBy from './SortBy'
 import { Button } from 'react-bootstrap'
 
 class ArticleByTopics extends Component {
@@ -15,7 +15,7 @@ class ArticleByTopics extends Component {
         return (
             <div>
                 {this.props.loggingIn &&
-                    <Button style={{ float: 'right' }} variant="info" href="/articles/newArticle"> Add New Article</Button>}
+                    <Button style={{ marginBottom: '2px' }} variant="info" href="/articles/newArticle"> Add New Article</Button>}
                 <SortBy o={this.order} />
                 <h2 style={{ textAlign: "center", fontWeight: 'bold', textDecoration: 'underline' }}>Articles Available </h2>
                 <ul>

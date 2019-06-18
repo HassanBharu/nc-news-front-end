@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { getComments, deleteComment } from './api'
 import '../index.css'
-import SingleComment from './singleComment'
-import AddComment from './addComment'
+import SingleComment from './SingleComment'
+import AddComment from './AddComment'
 
 class Comments extends Component {
 

@@ -111,7 +111,6 @@ export const postArticle = (title, body, topic, author) => {
 
 
 export const deleteArticle = (article_id) => {
-    console.log(article_id)
     return Axios.delete(`${URL}/articles/${article_id}`)
 
 }
