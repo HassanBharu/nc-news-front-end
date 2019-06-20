@@ -14,6 +14,7 @@ import Users from './components/Users'
 import UsersArticles from './components/UsersArticles'
 import NavBar from './components/NavBar'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import UserProfile from './components/UserProfile'
 
 
 
@@ -28,8 +29,8 @@ class App extends Component {
     const { userLoggedIn } = this.state
     return (
       <div>
-        <NavBar loggingIn={this.state.userLoggedIn} />
         <Header />
+        <NavBar loggingIn={this.state.userLoggedIn} />
         <Router>
           <Home path="/" />
           <UserLoginForm path="/login" userLoggedIn={this.userLogin} login={userLoggedIn} />
@@ -39,6 +40,7 @@ class App extends Component {
           <Topics path="/topics/" loggingIn={this.state.userLoggedIn} />
           <ArticleByTopics path="/topics/:topic" loggingIn={this.state.userLoggedIn} />
           <Users path="/users" />
+          <UserProfile path="/users/:username" loggingIn={this.state.userLoggedIn} />
           <UsersArticles path="/users/:username/articles" />
           <ShowErrors default path="/error" />
         </Router>

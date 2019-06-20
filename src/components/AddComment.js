@@ -6,17 +6,18 @@ class AddComment extends Component {
 
     state = {
         body: '',
-        newComment: []
     }
 
     render() {
 
-
         return (
 
             <div>
+
                 <form onSubmit={this.handleClick}>
-                    <input className="myText" id="commentInput" onChange={this.newComment}></input>  <button onClick={this.clear}>Add Comment!</button>
+
+                    <input className="myText" id="commentInput" value={this.state.body} onChange={this.newComment}></input>  <button>Add Comment <i class="fas fa-plus-square"></i></button>
+
                 </form>
             </div>
         )
@@ -29,17 +30,13 @@ class AddComment extends Component {
 
     }
 
-    clear = () => {
-        document.getElementById('commentInput').value = ""
-    }
 
     handleClick = (e) => {
         e.preventDefault();
-        this.setState({ body: '' })
         postComment(this.props.articleId, this.props.loggedState, this.state.body)
             .then(comment => {
                 this.props.addComment(comment)
-
+                this.setState({ body: '' })
             }).catch(({ response }) => {
                 navigate('/error', { replace: true, state: { From: 'comments cannot be empty', msg: response.data.msg, status: response.status } })
             })

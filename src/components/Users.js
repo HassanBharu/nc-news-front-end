@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { getAllUsers } from './api'
+import { navigate } from '@reach/router'
 import '../index.css'
 import { Card, Button } from 'react-bootstrap'
 
@@ -30,7 +31,7 @@ class Users extends Component {
                                 <Card.Img variant="top" src={`${user.avatar_url}`} />
 
                                 <Card.Body>
-                                    <Button variant="primary" href={`/users/${user.username}/articles`} >My Articles</Button>
+                                    <Button variant="primary" href={`/users/${user.username}/articles`} >Articles</Button>
                                 </Card.Body>
                             </Card>
 
@@ -48,6 +49,8 @@ class Users extends Component {
         getAllUsers()
             .then(users => {
                 this.setState({ users })
+            }).catch(({ response }) => {
+                navigate('/error', { replace: true, state: { From: 'comments cannot be empty', msg: response.data.msg, status: response.status } })
             })
     }
 }

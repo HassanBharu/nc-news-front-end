@@ -8,7 +8,6 @@ class ArticleCard extends Component {
     }
 
     render() {
-        console.log(this.props.article)
         const { author, body, comment_count, created_at, title, topic, votes } = this.props.article
         return (
             <div>

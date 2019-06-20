@@ -14,12 +14,11 @@ class SingleArticle extends Component {
     }
 
     render() {
-
         if (this.state.singleArticle.votes === undefined) return <p>loading.......</p>
         const { title, body, votes, created_at, author } = this.state.singleArticle
         return (
             < div >
-                <h2 style={{ textAlign: 'center', textDecoration: "underline" }}> <p>{title}</p></h2>
+                <h2 style={{ textAlign: 'center', textDecoration: "underline", color: 'blue' }}> <p>{title}</p></h2>
 
                 {body}
                 <p></p>
@@ -31,15 +30,17 @@ class SingleArticle extends Component {
                         <div>
                             <span></span><span></span>
 
+                            <button className="button1" disabled={this.state.vote === 1} onClick={() => this.amendVote(1)}><i class="far fa-thumbs-up"></i> Like</button >
 
-                            <button className="button1" disabled={this.state.vote === 1} onClick={() => this.amendVote(1)}>Like</button >
                             <span></span><span></span>
-                            <button className="button1" disabled={this.state.vote === -1} onClick={() => this.amendVote(-1)}>Dislike</button>
+
+                            <button className="button1" disabled={this.state.vote === -1} onClick={() => this.amendVote(-1)}><i class="far fa-thumbs-down"></i> Dislike</button>
                         </div>
                     }
                 </div>
 
-                {this.state.singleArticle.article_id && <Comments articleId={this.props.article_id} loggedIn={this.props.loggingIn} />}
+                {this.state.singleArticle.article_id && <Comments articleId={this.props.article_id}
+                    loggedIn={this.props.loggingIn} />}
 
 
             </div >

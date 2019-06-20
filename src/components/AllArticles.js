@@ -24,7 +24,7 @@ class AllArticles extends Component {
 
             <SortBy o={this.order} oder={this.state.articles} />
 
-            <h2 style={{ textAlign: 'center', fontWeight: 'bold', textDecoration: 'underline' }}>All Articles</h2>
+            <h2 style={{ textAlign: 'center', fontWeight: 'bold', textDecoration: 'underline' }}><i class="far fa-newspaper"></i> All Articles </h2>
             <ul >
 
                 {

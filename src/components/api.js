@@ -129,6 +129,15 @@ export const getUserArticles = (username) => {
         })
 }
 
+export const getUserByName = (username) => {
+
+    return Axios.get(`${URL}/users/${username}`)
+        .then(({ data: { user } }) => {
+
+            return user
+        })
+}
+
 
 
 

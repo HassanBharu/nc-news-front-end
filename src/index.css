@@ -42,7 +42,7 @@ li {
   box-shadow: 3px 3px 15px 5px #000000;
   display: inline-block;
   left:20%;
-  background-color: rgb(218, 253, 244);
+  background-color: rgb(198, 209, 207);
 }
 
 li:hover {
@@ -183,6 +183,27 @@ span + span {
     padding: 25px;
   }
 
+  .bkgrnd {
+    background-image: url('../src/images/world.jpeg')
+  }
+
+  .heroimage {
+    background-image: url("../src/images//world2.jpg"); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 250px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+   
+  }
+
+  .div {
+    width: 300px;
+    height:300px;
+    border: 15px solid green;
+    padding: 50px;
+    margin: 50px;
+  }
 /* 
 
 

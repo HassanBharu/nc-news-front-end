@@ -15,7 +15,7 @@ class SortBy extends Component {
 
             <Dropdown>
                 <Dropdown.Toggle variant="info" id="dropdown-basic">
-                    Search By
+                    <i class="fas fa-search"></i> Search By
   </Dropdown.Toggle>
 
                 <Dropdown.Menu value={this.state.sortBy}>
