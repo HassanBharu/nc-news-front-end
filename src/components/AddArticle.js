@@ -16,8 +16,9 @@ class AddArticle extends Component {
                 {this.props.logg}
                 <h4 style={{ textAlign: 'center', fontWeight: 'bold', backgroundColor: 'lightblue' }}>Add a new article</h4>
 
-                <form className="addArticle">
-                    Title: <input onChange={this.handleTitle} className="input"></input>
+                <form onSubmit={this.submitArticle} >
+
+                    Title: <input onChange={this.handleTitle} className="input" required={true}></input>
                     <p></p>
 
                     Topic: <select onChange={this.handleTopic} className="button1">
@@ -28,26 +29,26 @@ class AddArticle extends Component {
                     </select>
 
                     <p></p>
-                    Body:<textarea onChange={this.handleBody} className="input"></textarea>
+                    Body:<textarea onChange={this.handleBody} className="input" required={true}></textarea>
 
-                    <Button onClick={this.submitArticle} bsstyle="primary">submit</Button>
+                    <button>Add Comment <i class="fas fa-plus-square"></i></button>
                 </form>
 
             </div>
         )
     }
 
-    handleTitle = (titleInfo) => {
-        this.setState({ title: titleInfo.target.value })
+    handleTitle = (event) => {
+        this.setState({ title: event.target.value })
     }
 
-    handleTopic = (topicInfo) => {
+    handleTopic = (event) => {
 
-        this.setState({ topic: topicInfo.target.value })
+        this.setState({ topic: event.target.value })
     }
 
-    handleBody = (bodyInfo) => {
-        this.setState({ body: bodyInfo.target.value })
+    handleBody = (event) => {
+        this.setState({ body: event.target.value })
     }
 
     submitArticle = (e) => {

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { getUsers } from './api'
 import { navigate } from '@reach/router'
 import { Button } from 'react-bootstrap'
+import { Link } from '@reach/router'
 
 
 class UserLoginForm extends Component {
@@ -27,11 +28,11 @@ class UserLoginForm extends Component {
 
                                 <p>Are you sure you want to Sign Out?</p>
 
-                                < Button variant="info" bsStyle="info" onClick={this.handleLogout} > YES</Button>
+                                < Button variant="info" onClick={this.handleLogout} > YES</Button>
 
                                 <span></span><span></span>
-
-                                < Button variant="info" bsStyle="info" href="/" > NO</Button></div></div> :
+                                <Link to="/" style={{ color: "white" }}>
+                                    < Button variant="info" >NO </Button></Link></div></div> :
 
                         <div >
 
@@ -68,9 +69,7 @@ class UserLoginForm extends Component {
         navigate('/')
     }
 
-    goTo = (destination) => {
-        navigate(`${destination}`)
-    }
+
 
     handleLogout = (event) => {
         event.preventDefault()

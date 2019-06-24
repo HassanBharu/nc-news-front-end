@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { getUserArticles } from './api'
 import { Link } from '@reach/router'
-
+import ArticleCard from './ArticleCard'
 
 class UsersArticles extends Component {
     state = {
@@ -17,14 +17,12 @@ class UsersArticles extends Component {
                 </h2>
                 <ul>
                     {articles.map(article => {
-                        console.log(article)
                         return <li key={article.article_id}>
+
                             <Link to={`/articles/${article.article_id}`}>
-                                Title: {article.title}
-                                <p></p>
-                                Author: {article.author}
-                                <span></span><span></span>
-                                Topic: {article.topic}
+
+                                <ArticleCard article={article} />
+
                             </Link>
                         </li>
                     })}

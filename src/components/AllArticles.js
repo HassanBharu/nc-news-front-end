@@ -37,7 +37,12 @@ class AllArticles extends Component {
                         </Link>
 
                             {
-                                this.props.loggingIn === article.author && <Button block variant="warning" onClick={() => this.handleDeleteArticle(article.article_id)} > <span style={{ fontWeight: 'bold' }}>Delete Article: </span>{article.title}</Button>
+                                this.props.loggingIn === article.author &&
+                                <Button block variant="warning" onClick={() => this.handleDeleteArticle(article.article_id)} >
+
+                                    <span style={{ fontWeight: 'bold' }}>Delete Article: </span>{article.title}
+
+                                </Button>
                             }
                         </li>
                     })}

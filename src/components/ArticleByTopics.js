@@ -15,9 +15,10 @@ class ArticleByTopics extends Component {
 
         return (
             <div>
-                {this.props.loggingIn &&
-                    <Button style={{ marginBottom: '2px' }} variant="info" href="/articles/newArticle"> Add New Article</Button>}
-
+                <p>
+                    {this.props.loggingIn &&
+                        <Button variant="info" href="/articles/newArticle"> Add New Article</Button>}
+                </p>
                 <SortBy o={this.order} />
 
                 <h2 style={{ textAlign: "center", fontWeight: 'bold', textDecoration: 'underline' }}>Articles Available </h2>

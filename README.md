@@ -4,7 +4,7 @@
    for which the git can be found [here](https://github.com/HassanBharu/nc-news).
 ```
    The Web application allows a user to post new articles to existing topics, with the ability to create a 
-   comment on each article, vote on articles and comments, login and logout
+   comment on each article, vote on articles and comments, login and logout, order articles by created, comment count and votes.
   
 ```
    ### Getting Started
@@ -29,7 +29,7 @@
 
    #### Install dependencies
 
-   Run the following to install body-parser, chai, express, nodemon, knex, mocha, pg & supertest.
+   Run the following to install chai, express, nodemon, knex, mocha, pg & supertest.
 
    ```
    npm install 

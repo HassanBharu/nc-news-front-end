@@ -12,7 +12,6 @@ class UserProfile extends Component {
     }
     render() {
         const { username, avatar_url, name } = this.state.user
-        console.log(avatar_url)
         return (
             <div>
                 <Card className="userCard">

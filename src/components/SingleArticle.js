@@ -4,7 +4,8 @@ import '../App.css'
 import '../index.css'
 import { navigate } from "@reach/router";
 import Comments from './Comments'
-/* import like from '../images/like.jpg' */
+import { Spinner } from 'react-bootstrap'
+
 
 class SingleArticle extends Component {
 
@@ -14,7 +15,12 @@ class SingleArticle extends Component {
     }
 
     render() {
-        if (this.state.singleArticle.votes === undefined) return <p>loading.......</p>
+        if (this.state.singleArticle.votes === undefined)
+            return <Spinner animation="border" role="status">
+                <span className="sr-only">Loading...</span>
+            </Spinner>
+
+
         const { title, body, votes, created_at, author } = this.state.singleArticle
         return (
             < div >
@@ -22,7 +28,7 @@ class SingleArticle extends Component {
 
                 {body}
                 <p></p>
-                <div> <span></span>Written By: {author}  <p></p>Date: {created_at}<p></p>
+                <div> <span></span>Written By: {author}  <p></p>Date: {created_at.slice(0, 10)} @{created_at.slice(11, -5)}<p></p>
 
                     Vote: {this.state.vote + votes}
 

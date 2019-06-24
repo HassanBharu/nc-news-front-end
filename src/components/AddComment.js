@@ -16,7 +16,10 @@ class AddComment extends Component {
 
                 <form onSubmit={this.handleClick}>
 
-                    <input className="myText" id="commentInput" value={this.state.body} onChange={this.newComment}></input>  <button>Add Comment <i class="fas fa-plus-square"></i></button>
+                    <input className="myText" id="commentInput" value={this.state.body} onChange={this.newComment} required="true" ></input>
+
+
+                    <button>Add Comment <i class="fas fa-plus-square"></i></button>
 
                 </form>
             </div>

@@ -15,7 +15,7 @@ class NavBar extends Component {
         return (
 
             <Navbar bg="dark" expand="lg">
-                <Navbar.Brand style={{ fontWeight: 'bold', color: 'lightgreen' }} href="/"><i class="fas fa-atom"></i> NcNews</Navbar.Brand>
+                <Navbar.Brand><Link to="/" style={{ fontWeight: 'bold', color: 'lightgreen' }}><i class="fas fa-atom"></i> NcNews</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="m-auto">
@@ -28,9 +28,9 @@ class NavBar extends Component {
                                 <i class="fas fa-users"></i> users
                          </Dropdown.Toggle>
                             <DropdownMenu> {this.props.loggingIn &&
-                                <NavDropdown.Item href={`/users/${this.props.loggingIn}`}>My Profile</NavDropdown.Item>}
-
-                                <NavDropdown.Item href="/users">All Users</NavDropdown.Item>
+                                <Link to={`/users/${this.props.loggingIn}`}>My Profile</Link>}
+                                <p></p>
+                                <Link to="/users">All Users</Link>
                             </DropdownMenu>
                         </Dropdown>
 
@@ -40,9 +40,10 @@ class NavBar extends Component {
                                 <i class="far fa-newspaper"></i> Articles
                          </Dropdown.Toggle>
                             <DropdownMenu>
-                                <NavDropdown.Item href="/articles">All Articles</NavDropdown.Item>
+                                <Link to="/articles">All Articles</Link>
+                                <p></p>
                                 {this.props.loggingIn &&
-                                    <NavDropdown.Item href="/articles/newArticle">Add Articles</NavDropdown.Item>}
+                                    <Link to="/articles/newArticle">Add Articles</Link>}
                             </DropdownMenu>
                         </Dropdown>
 

@@ -17,7 +17,7 @@ class SingleComment extends Component {
                         <span style={{ textDecoration: 'underline', fontWeight: 'bold' }}>
                             {comment.author}
                         </span>
-                        says:
+                        <span></span>  says:
                         <p></p>
                         {comment.body}
                         <p></p>
@@ -37,7 +37,7 @@ class SingleComment extends Component {
 
                             <button disabled={this.state.votes < 0} onClick={() => this.amendVote(comment.comment_id, -1)}><i class="far fa-thumbs-down"></i> Dislike</button>
 
-                            <span style={{ float: 'right' }} ><i class="fas fa-calendar-alt"></i> created: {comment.created_at}</span>
+                            <span style={{ float: 'right' }} ><i class="fas fa-calendar-alt"></i> created: {comment.created_at.slice(0, 10)} @ {comment.created_at.slice(11, -5)}</span>
 
                         </div> :
                         <div>
